@@ -1,6 +1,7 @@
 import React from "react";
 import Link from "next/link";
-import { Droplet, Phone, MessageSquare, MapPin, Clock } from "lucide-react";
+import Image from "next/image";
+import { Phone, MessageSquare, MapPin, Clock } from "lucide-react";
 import ThemeToggle from "./ThemeToggle";
 
 export default function Footer() {
@@ -11,22 +12,34 @@ export default function Footer() {
           
           {/* Brand Info */}
           <div className="space-y-4">
-            <div className="flex items-center gap-2">
-              <div className="w-8 h-8 rounded-lg bg-black text-white dark:bg-white dark:text-black flex items-center justify-center font-bold">
-                <Droplet className="w-4 h-4 fill-white text-white dark:fill-black dark:text-black" />
+            <div className="flex items-center gap-3">
+              <div className="bg-white rounded-lg p-1.5 border border-neutral-300 dark:border-neutral-800 shadow-sm inline-flex">
+                <Image
+                  src="/logo.png"
+                  alt="Aqua Solutions — Pure Water Solutions"
+                  width={140}
+                  height={40}
+                  className="h-8 w-auto object-contain"
+                />
               </div>
-              <span className="text-lg font-bold text-black dark:text-white tracking-tight">
-                Aqua Solutions
-              </span>
             </div>
 
             <p className="text-xs text-neutral-600 dark:text-neutral-400 leading-relaxed">
               સ્વચ્છ અને શુદ્ધ પાણી માટે આપનું વિશ્વસનીય નામ | Pure Water Solutions. અમદાવાદમાં તમામ પ્રકારના RO વોટર પ્યુરિફાયર અને કોમર્શિયલ પ્લાન્ટ્સનું વેચાણ, સર્વિસિંગ અને AMC.
             </p>
 
-            <div className="pt-2 text-xs text-neutral-600 dark:text-neutral-400 space-y-1">
+            <div className="pt-2 text-xs text-neutral-600 dark:text-neutral-400 space-y-1.5">
               <div>૧૦+ વર્ષનો વિશ્વાસ • ૫,૦૦૦+ સંતુષ્ટ ગ્રાહકો</div>
-              <div className="text-black dark:text-white font-mono font-medium">IS 10500 Water Standard</div>
+              <div className="text-black dark:text-white font-mono font-medium flex items-center gap-2">
+                <Image
+                  src="/logo-emblem.png"
+                  alt="Save Water Save Life"
+                  width={18}
+                  height={18}
+                  className="w-4 h-4 object-contain inline-block"
+                />
+                <span>IS 10500 Water Standard • Save Water Save Life</span>
+              </div>
             </div>
           </div>
 

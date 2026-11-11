@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import Image from "next/image";
 import { Phone, MessageSquare, Clock, MapPin, CheckCircle2, ShieldCheck, Send } from "lucide-react";
 
 interface ContactFormData {
@@ -119,16 +120,25 @@ I would like to book an RO water purifier service with Aqua Solutions:
 
             {submittedData ? (
               <div className="bg-neutral-50 dark:bg-black border border-neutral-200 dark:border-neutral-700 rounded-xl p-6 space-y-4">
-                <div className="flex items-start gap-3">
-                  <CheckCircle2 className="w-6 h-6 text-black dark:text-white mt-0.5 flex-shrink-0" />
-                  <div>
-                    <h4 className="text-base font-bold text-black dark:text-white">
-                      નમસ્તે {submittedData.customerName}, તમારો WhatsApp મેસેજ તૈયાર છે!
-                    </h4>
-                    <p className="text-xs text-neutral-600 dark:text-neutral-300 mt-1 leading-relaxed">
-                      બધી વિગતો સાથેનો પ્રિ-રિટન મેસેજ નીચે મુજબ છે. મોકલવા માટે લીલા બટન પર ક્લિક કરો:
-                    </p>
+                <div className="flex items-start justify-between gap-3">
+                  <div className="flex items-start gap-3">
+                    <CheckCircle2 className="w-6 h-6 text-black dark:text-white mt-0.5 flex-shrink-0" />
+                    <div>
+                      <h4 className="text-base font-bold text-black dark:text-white">
+                        નમસ્તે {submittedData.customerName}, તમારો WhatsApp મેસેજ તૈયાર છે!
+                      </h4>
+                      <p className="text-xs text-neutral-600 dark:text-neutral-300 mt-1 leading-relaxed">
+                        બધી વિગતો સાથેનો પ્રિ-રિટન મેસેજ નીચે મુજબ છે. મોકલવા માટે લીલા બટન પર ક્લિક કરો:
+                      </p>
+                    </div>
                   </div>
+                  <Image
+                    src="/logo-emblem.png"
+                    alt="Save Water Save Life"
+                    width={40}
+                    height={40}
+                    className="w-10 h-10 object-contain hidden sm:block flex-shrink-0"
+                  />
                 </div>
 
                 {/* Prewritten Message Preview Box */}
@@ -345,11 +355,20 @@ I would like to book an RO water purifier service with Aqua Solutions:
               </div>
             </div>
 
-            {/* Quality Commitment Card */}
+            {/* Quality Commitment Card with Brand Seal */}
             <div className="bg-neutral-100 dark:bg-[#0a0a0a] border border-neutral-200 dark:border-neutral-800 text-black dark:text-white rounded-2xl p-6 shadow-sm">
-              <div className="flex items-center gap-2 mb-2">
-                <ShieldCheck className="w-5 h-5 text-black dark:text-white" />
-                <h4 className="text-sm font-bold text-black dark:text-white">Aqua Solutions ની ગેરંટી</h4>
+              <div className="flex items-center justify-between mb-2">
+                <div className="flex items-center gap-2">
+                  <ShieldCheck className="w-5 h-5 text-black dark:text-white" />
+                  <h4 className="text-sm font-bold text-black dark:text-white">Aqua Solutions ની ગેરંટી</h4>
+                </div>
+                <Image
+                  src="/logo-emblem.png"
+                  alt="Save Water Save Life"
+                  width={28}
+                  height={28}
+                  className="w-7 h-7 object-contain"
+                />
               </div>
               <p className="text-xs text-neutral-700 dark:text-neutral-300 leading-relaxed">
                 અમે માત્ર ૧૦૦% ઓરિજિનલ સ્પેર પાર્ટ્સનો ઉપયોગ કરીએ છીએ. દરેક સર્વિસ પછી ટેકનિશિયન તમારી હાજરીમાં TDS ટેસ્ટિંગ કરી પરિણામ દર્શાવશે.

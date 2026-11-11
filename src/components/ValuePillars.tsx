@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 import { ShieldCheck, Truck, BadgePercent, Wrench } from "lucide-react";
 
 interface PillarItem {
@@ -54,17 +55,36 @@ export default function ValuePillars() {
     <section id="pillars" className="py-16 bg-neutral-50 text-black border-b border-neutral-200 dark:bg-black dark:text-white dark:border-neutral-900 transition-colors">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        {/* Section Header */}
-        <div className="max-w-3xl mb-12">
-          <div className="inline-flex items-center gap-2 text-xs font-semibold text-neutral-500 dark:text-neutral-400 tracking-wide uppercase mb-2">
-            <span>અમારી મુખ્ય વિશેષતાઓ (Our Value Pillars)</span>
+        {/* Section Header with Official Badge */}
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+          <div className="max-w-2xl">
+            <div className="inline-flex items-center gap-2 text-xs font-semibold text-neutral-500 dark:text-neutral-400 tracking-wide uppercase mb-2">
+              <span>અમારી મુખ્ય વિશેષતાઓ (Our Value Pillars)</span>
+            </div>
+            <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-black dark:text-white">
+              અમદાવાદમાં Aqua Solutions શા માટે વિશ્વસનીય છે?
+            </h2>
+            <p className="text-sm sm:text-base text-neutral-600 dark:text-neutral-400 mt-2">
+              અમે માત્ર ફિલ્ટર બદલતા નથી, પરંતુ તમારા ઘર અને કંપનીમાં પીવાના પાણીની ૧૦૦% શુદ્ધતા સુનિશ્ચિત કરીએ છીએ.
+            </p>
           </div>
-          <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-black dark:text-white">
-            અમદાવાદમાં Aqua Solutions શા માટે વિશ્વસનીય છે?
-          </h2>
-          <p className="text-sm sm:text-base text-neutral-600 dark:text-neutral-400 mt-2">
-            અમે માત્ર ફિલ્ટર બદલતા નથી, પરંતુ તમારા ઘર અને કંપનીમાં પીવાના પાણીની ૧૦૦% શુદ્ધતા સુનિશ્ચિત કરીએ છીએ.
-          </p>
+          <div className="hidden sm:inline-flex items-center gap-3 bg-white dark:bg-[#0d0d0d] border border-neutral-200 dark:border-neutral-800 rounded-xl p-3 shadow-sm flex-shrink-0">
+            <Image
+              src="/logo-emblem.png"
+              alt="Save Water Save Life"
+              width={44}
+              height={44}
+              className="w-11 h-11 object-contain"
+            />
+            <div>
+              <span className="text-xs font-bold text-black dark:text-white block">
+                Save Water • Save Life
+              </span>
+              <span className="text-[11px] text-neutral-500 font-mono block">
+                Aqua Solutions Certified
+              </span>
+            </div>
+          </div>
         </div>
 
         {/* 4 Pillar Cards Grid */}

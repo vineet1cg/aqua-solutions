@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import {
   Phone,
   MessageSquare,
@@ -180,8 +181,15 @@ export default function AdminPage() {
       <div className="min-h-screen bg-neutral-50 dark:bg-black flex flex-col justify-center py-12 sm:px-6 lg:px-8 text-black dark:text-white transition-colors">
         <div className="sm:mx-auto sm:w-full sm:max-w-md">
           <div className="text-center">
-            <div className="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-white dark:bg-[#0a0a0a] border border-neutral-300 dark:border-neutral-800 text-black dark:text-white mb-3 shadow-sm">
-              <Lock className="w-6 h-6" />
+            <div className="inline-flex items-center justify-center bg-white border border-neutral-200 dark:border-neutral-800 rounded-xl p-2.5 mb-3 shadow-sm">
+              <Image
+                src="/logo.png"
+                alt="Aqua Solutions — Pure Water Solutions"
+                width={160}
+                height={44}
+                priority
+                className="h-10 w-auto object-contain"
+              />
             </div>
             <h2 className="text-2xl font-bold tracking-tight text-black dark:text-white">
               Aqua Solutions Owner Portal
@@ -244,12 +252,18 @@ export default function AdminPage() {
       <header className="bg-white dark:bg-black text-black dark:text-white border-b border-neutral-200 dark:border-neutral-900 transition-colors">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <div className="w-8 h-8 rounded-lg bg-black text-white dark:bg-white dark:text-black flex items-center justify-center font-bold text-sm">
-              AS
+            <div className="bg-white rounded-lg p-1 border border-neutral-200 dark:border-neutral-800 flex items-center justify-center shadow-sm">
+              <Image
+                src="/logo.png"
+                alt="Aqua Solutions"
+                width={120}
+                height={32}
+                className="h-7 w-auto object-contain"
+              />
             </div>
             <div>
               <h1 className="text-sm font-bold tracking-tight text-black dark:text-white">
-                Aqua Solutions — Admin Dashboard
+                Admin Dashboard
               </h1>
               <span className="text-[11px] text-neutral-500 dark:text-neutral-400 block -mt-0.5">
                 અમદાવાદ અને ગુજરાત લીડ મેનેજર

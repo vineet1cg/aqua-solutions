@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { Phone, MessageSquare, Menu, X, Droplet } from "lucide-react";
 import ThemeToggle from "./ThemeToggle";
 
@@ -48,15 +49,22 @@ export default function Navbar() {
       <header className="sticky top-0 z-40 bg-white/95 text-black border-b border-neutral-200 dark:bg-black/95 dark:text-white dark:border-neutral-900 backdrop-blur-md shadow-sm transition-colors">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
           {/* Brand Logo */}
-          <Link href="/" className="flex items-center gap-2.5 group">
-            <div className="w-9 h-9 rounded-lg bg-black text-white dark:bg-white dark:text-black flex items-center justify-center font-bold text-lg shadow-sm transition-colors">
-              <Droplet className="w-5 h-5 fill-current" />
+          <Link href="/" className="flex items-center gap-3 group">
+            <div className="bg-white rounded-lg p-1 border border-neutral-200 dark:border-neutral-800 shadow-sm flex items-center justify-center transition-transform group-hover:scale-[1.02]">
+              <Image
+                src="/logo.png"
+                alt="Aqua Solutions — Pure Water Solutions"
+                width={130}
+                height={36}
+                priority
+                className="h-8 w-auto object-contain"
+              />
             </div>
-            <div>
-              <span className="text-lg font-bold tracking-tight text-black dark:text-white group-hover:text-neutral-600 dark:group-hover:text-neutral-300 transition-colors">
+            <div className="hidden lg:block border-l border-neutral-200 dark:border-neutral-800 pl-3">
+              <span className="text-xs font-bold tracking-tight text-black dark:text-white group-hover:text-neutral-600 dark:group-hover:text-neutral-300 transition-colors block leading-tight">
                 Aqua Solutions
               </span>
-              <span className="hidden sm:block text-[11px] text-neutral-500 dark:text-neutral-400 font-medium -mt-1">
+              <span className="text-[11px] text-neutral-500 dark:text-neutral-400 font-medium -mt-0.5 block">
                 RO Sales, Service & AMC • Ahmedabad
               </span>
             </div>

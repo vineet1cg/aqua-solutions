@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import Image from "next/image";
 import { Phone, MessageSquare, CheckCircle2, ShieldCheck, Clock, Activity } from "lucide-react";
 
 interface FormState {
@@ -96,10 +97,22 @@ I would like to book an RO water purifier service with Aqua Solutions:
           {/* Left Column: Hero Copy & Trust Badges (7 cols) */}
           <div className="lg:col-span-7 space-y-6">
             
-            {/* Direct Local Service Badge */}
-            <div className="inline-flex items-center gap-2 bg-neutral-100 border border-neutral-300 text-neutral-800 dark:bg-[#0d0d0d] dark:border-neutral-800 dark:text-neutral-300 text-xs px-3 py-1.5 rounded-md font-medium transition-colors">
-              <span className="w-2 h-2 rounded-full bg-black dark:bg-white"></span>
-              <span>અમદાવાદ અને ગાંધીનગરમાં આજની ડોરસ્ટેપ સર્વિસ ઉપલબ્ધ</span>
+            {/* Direct Local Service Badge with Official Emblem */}
+            <div className="flex flex-wrap items-center gap-2">
+              <div className="inline-flex items-center gap-2 bg-neutral-100 border border-neutral-300 text-neutral-800 dark:bg-[#0d0d0d] dark:border-neutral-800 dark:text-neutral-300 text-xs px-3 py-1.5 rounded-full font-medium transition-colors shadow-sm">
+                <Image
+                  src="/logo-emblem.png"
+                  alt="Save Water Save Life"
+                  width={20}
+                  height={20}
+                  className="w-4 h-4 object-contain"
+                />
+                <span className="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
+                <span>અમદાવાદ અને ગાંધીનગરમાં આજની ડોરસ્ટેપ સર્વિસ ઉપલબ્ધ</span>
+              </div>
+              <div className="hidden sm:inline-flex items-center gap-1.5 text-xs text-neutral-500 font-mono">
+                <span>Save Water • Save Life</span>
+              </div>
             </div>
 
             {/* Main Headline */}
@@ -214,30 +227,50 @@ I would like to book an RO water purifier service with Aqua Solutions:
           {/* Right Column: Embedded Quick Booking Card (5 cols) */}
           <div id="quick-booking" className="lg:col-span-5">
             <div className="bg-white border border-neutral-200 text-black shadow-lg dark:bg-[#0a0a0a] dark:border-neutral-800 dark:text-white dark:shadow-2xl rounded-2xl p-6 sm:p-7 transition-colors">
-              <div className="border-b border-neutral-200 dark:border-neutral-800 pb-4 mb-5">
-                <span className="text-xs font-semibold text-neutral-500 dark:text-neutral-400 uppercase tracking-wide block">
-                  ત્વરિત ડોરસ્ટેપ સર્વિસ (Quick Service)
-                </span>
-                <h3 className="text-xl font-bold text-black dark:text-white mt-1">
-                  ઝડપી સર્વિસ બુક કરો
-                </h3>
-                <p className="text-xs text-neutral-500 dark:text-neutral-400 mt-1">
-                  ફોર્મ સબમિટ કરતાં જ વિગતો સીધી WhatsApp માં ખૂલશે — કોઈ ઇમેઇલની રાહ જોવી નહીં પડે.
-                </p>
+              <div className="border-b border-neutral-200 dark:border-neutral-800 pb-4 mb-5 flex items-start justify-between gap-3">
+                <div>
+                  <span className="text-xs font-semibold text-neutral-500 dark:text-neutral-400 uppercase tracking-wide block">
+                    ત્વરિત ડોરસ્ટેપ સર્વિસ (Quick Service)
+                  </span>
+                  <h3 className="text-xl font-bold text-black dark:text-white mt-1">
+                    ઝડપી સર્વિસ બુક કરો
+                  </h3>
+                  <p className="text-xs text-neutral-500 dark:text-neutral-400 mt-1">
+                    ફોર્મ સબમિટ કરતાં જ વિગતો સીધી WhatsApp માં ખૂલશે — કોઈ ઇમેઇલની રાહ જોવી નહીં પડે.
+                  </p>
+                </div>
+                <div className="flex-shrink-0 bg-white dark:bg-[#141414] p-1 rounded-full border border-neutral-200 dark:border-neutral-800 shadow-sm">
+                  <Image
+                    src="/logo-emblem.png"
+                    alt="Save Water Save Life"
+                    width={44}
+                    height={44}
+                    className="w-10 h-10 object-contain"
+                  />
+                </div>
               </div>
 
               {submittedData ? (
                 <div className="bg-neutral-50 border border-neutral-300 dark:bg-black dark:border-neutral-700 rounded-xl p-5 space-y-4">
-                  <div className="flex items-start gap-3">
-                    <CheckCircle2 className="w-5 h-5 text-emerald-600 dark:text-white mt-0.5 flex-shrink-0" />
-                    <div>
-                      <h4 className="text-sm font-bold text-black dark:text-white">
-                        નમસ્તે {submittedData.customerName}, તમારો WhatsApp મેસેજ તૈયાર છે!
-                      </h4>
-                      <p className="text-xs text-neutral-600 dark:text-neutral-300 mt-1 leading-relaxed">
-                        નીચે આપેલા બટન પર ક્લિક કરીને સીધો WhatsApp મેસેજ મોકલો:
-                      </p>
+                  <div className="flex items-start justify-between gap-3">
+                    <div className="flex items-start gap-3">
+                      <CheckCircle2 className="w-5 h-5 text-emerald-600 dark:text-white mt-0.5 flex-shrink-0" />
+                      <div>
+                        <h4 className="text-sm font-bold text-black dark:text-white">
+                          નમસ્તે {submittedData.customerName}, તમારો WhatsApp મેસેજ તૈયાર છે!
+                        </h4>
+                        <p className="text-xs text-neutral-600 dark:text-neutral-300 mt-1 leading-relaxed">
+                          નીચે આપેલા બટન પર ક્લિક કરીને સીધો WhatsApp મેસેજ મોકલો:
+                        </p>
+                      </div>
                     </div>
+                    <Image
+                      src="/logo-emblem.png"
+                      alt="Save Water Save Life"
+                      width={32}
+                      height={32}
+                      className="w-8 h-8 object-contain flex-shrink-0 hidden sm:block"
+                    />
                   </div>
 
                   {/* Prewritten Message Preview Box */}

@@ -8,6 +8,7 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://aqua-solutions-phi.vercel.app"),
   title: "Aqua Solutions — RO વોટર પ્યુરિફાયર સેલ્સ, સર્વિસ અને AMC | અમદાવાદ",
   description:
     "અમદાવાદ અને ગુજરાતમાં RO વોટર પ્યુરિફાયર રિપેરિંગ, ફિલ્ટર ચેન્જ, નવું RO ઇન્સ્ટોલેશન અને AMC વાર્ષિક કોન્ટ્રાક્ટ. ઓરિજિનલ સ્પેર પાર્ટ્સ અને ઝડપી ડોરસ્ટેપ સર્વિસ. Call: +91 96620 21602.",
@@ -22,6 +23,26 @@ export const metadata: Metadata = {
     "TDS water testing Ahmedabad",
   ],
   authors: [{ name: "Aqua Solutions" }],
+  icons: {
+    icon: "/favicon.ico",
+    apple: "/apple-icon.png",
+  },
+  openGraph: {
+    title: "Aqua Solutions — RO વોટર પ્યુરિફાયર સેલ્સ, સર્વિસ અને AMC",
+    description: "સ્વચ્છ અને શુદ્ધ પાણી માટે આપનું વિશ્વસનીય નામ | Pure Water Solutions. Call: +91 96620 21602.",
+    url: "https://aqua-solutions-phi.vercel.app",
+    siteName: "Aqua Solutions",
+    images: [
+      {
+        url: "/logo.png",
+        width: 1074,
+        height: 294,
+        alt: "Aqua Solutions Logo — Save Water Save Life",
+      },
+    ],
+    locale: "gu_IN",
+    type: "website",
+  },
 };
 
 export default function RootLayout({
