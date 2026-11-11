@@ -9,7 +9,6 @@ export default function ThemeToggle({ className = "" }: { className?: string }) 
 
   useEffect(() => {
     setMounted(true);
-    // Check if light is explicitly stored; otherwise default to dark (black)
     const stored = localStorage.getItem("theme");
     if (stored === "light") {
       setIsDark(false);
@@ -34,7 +33,7 @@ export default function ThemeToggle({ className = "" }: { className?: string }) 
 
   if (!mounted) {
     return (
-      <div className={`w-9 h-9 rounded-lg border border-slate-700 bg-slate-800 ${className}`} />
+      <div className={`w-9 h-9 rounded-lg border border-neutral-800 bg-black ${className}`} />
     );
   }
 
@@ -46,14 +45,14 @@ export default function ThemeToggle({ className = "" }: { className?: string }) 
       title={isDark ? "લાઈટ મોડમાં બદલો (Switch to Light Mode)" : "ડાર્ક મોડમાં બદલો (Switch to Dark Mode)"}
       className={`inline-flex items-center justify-center w-9 h-9 rounded-lg border transition-colors text-xs ${
         isDark
-          ? "bg-slate-900 border-slate-700 text-amber-400 hover:bg-slate-800 hover:text-amber-300"
-          : "bg-white border-slate-200 text-slate-700 hover:bg-slate-100 hover:text-slate-900 shadow-sm"
+          ? "bg-black border-neutral-800 text-neutral-300 hover:bg-neutral-900 hover:text-white"
+          : "bg-white border-neutral-300 text-black hover:bg-neutral-100 shadow-sm"
       } ${className}`}
     >
       {isDark ? (
-        <Sun className="w-4 h-4" />
+        <Sun className="w-4 h-4 text-white" />
       ) : (
-        <Moon className="w-4 h-4" />
+        <Moon className="w-4 h-4 text-black" />
       )}
     </button>
   );

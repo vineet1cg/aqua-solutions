@@ -49,7 +49,7 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className="min-h-screen bg-slate-950 text-slate-100 dark:bg-slate-950 dark:text-slate-100 antialiased selection:bg-ocean-600 selection:text-white transition-colors duration-150">
+      <body className="min-h-screen bg-black text-white antialiased selection:bg-neutral-800 selection:text-white transition-colors duration-150">
         {children}
       </body>
     </html>

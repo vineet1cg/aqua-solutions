@@ -74,18 +74,18 @@ const amcTiers: AmcTier[] = [
 
 export default function AmcPlans() {
   return (
-    <section id="amc-plans" className="py-16 sm:py-20 bg-slate-950 border-b border-slate-800 text-slate-100 transition-colors">
+    <section id="amc-plans" className="py-16 sm:py-20 bg-black border-b border-neutral-900 text-white transition-colors">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Heading */}
         <div className="max-w-3xl mb-12">
-          <div className="inline-flex items-center gap-2 text-xs font-semibold text-ocean-400 tracking-wide uppercase mb-2">
+          <div className="inline-flex items-center gap-2 text-xs font-semibold text-neutral-400 tracking-wide uppercase mb-2">
             <span>વાર્ષિક મેન્ટેનન્સ કોન્ટ્રાક્ટ (AMC Comparison)</span>
           </div>
           <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-white">
             તમારા બજેટ અને જરૂરિયાત મુજબ યોગ્ય AMC પ્લાન પસંદ કરો
           </h2>
-          <p className="text-sm sm:text-base text-slate-400 mt-2">
+          <p className="text-sm sm:text-base text-neutral-400 mt-2">
             કોઈ છુપી શરતો નહીં. અમે દરેક પ્લાનમાં શું મળશે અને શું બાકાત રહેશે તે અગાઉથી સ્પષ્ટ જણાવીએ છીએ.
           </p>
         </div>
@@ -97,8 +97,8 @@ export default function AmcPlans() {
               key={tier.id}
               className={`rounded-xl p-6 sm:p-7 flex flex-col justify-between transition-colors ${
                 tier.isPopular
-                  ? "bg-slate-900 border-2 border-ocean-500 shadow-xl relative"
-                  : "bg-slate-900/70 border border-slate-800 shadow-sm"
+                  ? "bg-[#121212] border-2 border-white shadow-2xl relative"
+                  : "bg-[#0a0a0a] border border-neutral-800 shadow-sm"
               }`}
             >
               <div>
@@ -106,10 +106,10 @@ export default function AmcPlans() {
                 {tier.badge && (
                   <div className="mb-4">
                     <span
-                      className={`text-xs font-semibold px-2.5 py-1 rounded inline-block ${
+                      className={`text-xs font-bold px-2.5 py-1 rounded inline-block ${
                         tier.isPopular
-                          ? "bg-ocean-600 text-white"
-                          : "bg-slate-800 text-slate-300 border border-slate-700"
+                          ? "bg-white text-black"
+                          : "bg-[#171717] text-neutral-300 border border-neutral-700"
                       }`}
                     >
                       {tier.badge}
@@ -121,33 +121,33 @@ export default function AmcPlans() {
                 <h3 className="text-xl font-bold text-white">
                   {tier.nameGu}
                 </h3>
-                <span className="text-xs font-medium text-slate-400 block mb-3">
+                <span className="text-xs font-medium text-neutral-400 block mb-3">
                   {tier.nameEn}
                 </span>
 
-                <div className="py-3 border-y border-slate-800 my-4">
+                <div className="py-3 border-y border-neutral-800 my-4">
                   <div className="text-lg font-bold text-white">
                     {tier.priceEstimate}
                   </div>
-                  <div className="text-xs text-slate-400">
+                  <div className="text-xs text-neutral-400">
                     {tier.priceNote}
                   </div>
                 </div>
 
-                <p className="text-xs text-slate-300 mb-5">
-                  <strong className="text-slate-200">લાયક:</strong> {tier.targetAudience}
+                <p className="text-xs text-neutral-300 mb-5">
+                  <strong className="text-white">લાયક:</strong> {tier.targetAudience}
                 </p>
 
                 {/* Deliverables List */}
                 <div className="space-y-3 mb-6">
                   {tier.deliverables.map((item, dIdx) => (
-                    <div key={dIdx} className="flex items-start gap-2.5 text-xs text-slate-200">
+                    <div key={dIdx} className="flex items-start gap-2.5 text-xs text-neutral-200">
                       {item.included ? (
-                        <Check className="w-4 h-4 text-aqua-400 mt-0.5 flex-shrink-0" />
+                        <Check className="w-4 h-4 text-white mt-0.5 flex-shrink-0" />
                       ) : (
-                        <X className="w-4 h-4 text-red-400 mt-0.5 flex-shrink-0" />
+                        <X className="w-4 h-4 text-neutral-600 mt-0.5 flex-shrink-0" />
                       )}
-                      <span className={item.included ? "font-normal" : "text-slate-500 line-through"}>
+                      <span className={item.included ? "font-normal" : "text-neutral-500 line-through"}>
                         {item.text}
                       </span>
                     </div>
@@ -156,9 +156,9 @@ export default function AmcPlans() {
 
                 {/* Clear Exclusion Notice on Basic Tier */}
                 {tier.exclusionNote && (
-                  <div className="bg-amber-950/40 border border-amber-800/80 rounded-lg p-3 text-[11px] text-amber-200 leading-relaxed mb-6">
-                    <div className="flex items-start gap-1.5 font-semibold mb-0.5 text-amber-300">
-                      <ShieldAlert className="w-3.5 h-3.5 text-amber-400 mt-0.5 flex-shrink-0" />
+                  <div className="bg-[#141414] border border-neutral-700 rounded-lg p-3 text-[11px] text-neutral-300 leading-relaxed mb-6">
+                    <div className="flex items-start gap-1.5 font-semibold mb-0.5 text-white">
+                      <ShieldAlert className="w-3.5 h-3.5 text-white mt-0.5 flex-shrink-0" />
                       <span>બાકાત સૂચના (Exclusion Notice)</span>
                     </div>
                     {tier.exclusionNote}
@@ -167,13 +167,13 @@ export default function AmcPlans() {
               </div>
 
               {/* Action Link to Booking Form */}
-              <div className="pt-4 border-t border-slate-800">
+              <div className="pt-4 border-t border-neutral-800">
                 <a
                   href="#contact"
                   className={`w-full h-10 rounded-lg text-xs font-semibold flex items-center justify-center gap-1.5 transition-colors ${
                     tier.isPopular
-                      ? "bg-ocean-600 hover:bg-ocean-700 text-white shadow-sm"
-                      : "bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700"
+                      ? "bg-white hover:bg-neutral-200 text-black shadow-sm"
+                      : "bg-[#141414] hover:bg-[#1f1f1f] text-white border border-neutral-700"
                   }`}
                 >
                   <span>આ પ્લાન માટે પૂછપરછ કરો</span>

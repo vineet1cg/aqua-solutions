@@ -168,7 +168,7 @@ export default function AdminPage() {
 
   if (isAuthenticated === null) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-slate-950 text-slate-400 text-sm">
+      <div className="min-h-screen flex items-center justify-center bg-black text-neutral-400 text-sm">
         એડમિન પોર્ટલ લોડ થઈ રહ્યું છે...
       </div>
     );
@@ -177,31 +177,31 @@ export default function AdminPage() {
   // Login Screen
   if (!isAuthenticated) {
     return (
-      <div className="min-h-screen bg-slate-950 flex flex-col justify-center py-12 sm:px-6 lg:px-8 text-slate-100">
+      <div className="min-h-screen bg-black flex flex-col justify-center py-12 sm:px-6 lg:px-8 text-white">
         <div className="sm:mx-auto sm:w-full sm:max-w-md">
           <div className="text-center">
-            <div className="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-slate-900 border border-slate-800 text-ocean-400 mb-3 shadow-md">
+            <div className="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-[#0a0a0a] border border-neutral-800 text-white mb-3 shadow-md">
               <Lock className="w-6 h-6" />
             </div>
             <h2 className="text-2xl font-bold tracking-tight text-white">
               Aqua Solutions Owner Portal
             </h2>
-            <p className="text-xs text-slate-400 mt-1">
+            <p className="text-xs text-neutral-400 mt-1">
               સર્વિસ લીડ્સ અને AMC ટિકિટ મેનેજમેન્ટ ડેશબોર્ડ
             </p>
           </div>
 
           <div className="mt-8 sm:mx-auto sm:w-full sm:max-w-md">
-            <div className="bg-slate-900 py-8 px-6 shadow-xl border border-slate-800 rounded-xl sm:px-10">
+            <div className="bg-[#0a0a0a] py-8 px-6 shadow-2xl border border-neutral-800 rounded-xl sm:px-10">
               {loginError && (
-                <div className="mb-4 p-3 bg-red-950/60 border border-red-800 rounded-lg text-xs text-red-300">
+                <div className="mb-4 p-3 bg-[#1a0505] border border-red-900 rounded-lg text-xs text-red-300">
                   {loginError}
                 </div>
               )}
 
               <form onSubmit={handleLogin} className="space-y-4">
                 <div>
-                  <label className="block text-xs font-medium text-slate-300 mb-1">
+                  <label className="block text-xs font-medium text-neutral-300 mb-1">
                     એડમિન પાસવર્ડ (Admin Password)
                   </label>
                   <input
@@ -210,23 +210,23 @@ export default function AdminPage() {
                     placeholder="Enter owner password..."
                     value={passwordInput}
                     onChange={(e) => setPasswordInput(e.target.value)}
-                    className="w-full h-10 px-3 rounded-lg border border-slate-700 bg-slate-950 text-white text-sm focus:border-ocean-500 focus:ring-1 focus:ring-ocean-500"
+                    className="w-full h-10 px-3 rounded-lg border border-neutral-800 bg-black text-white text-sm focus:border-white focus:ring-1 focus:ring-white placeholder-neutral-600"
                   />
-                  <span className="text-[11px] text-slate-500 mt-1 block">
+                  <span className="text-[11px] text-neutral-500 mt-1 block">
                     ડિફોલ્ટ પાસવર્ડ PRD અનુસાર .env માંથી લોડ થાય છે.
                   </span>
                 </div>
 
                 <button
                   type="submit"
-                  className="w-full h-10 bg-ocean-600 hover:bg-ocean-700 text-white text-sm font-medium rounded-lg transition-colors shadow-sm"
+                  className="w-full h-10 bg-white hover:bg-neutral-200 text-black text-sm font-semibold rounded-lg transition-colors shadow-sm"
                 >
                   ડેશબોર્ડમાં પ્રવેશ કરો (Login)
                 </button>
               </form>
 
-              <div className="mt-6 pt-4 border-t border-slate-800 text-center">
-                <Link href="/" className="text-xs text-ocean-400 hover:underline">
+              <div className="mt-6 pt-4 border-t border-neutral-800 text-center">
+                <Link href="/" className="text-xs text-neutral-400 hover:text-white hover:underline">
                   ← મુખ્ય વેબસાઇટ પર પાછા જાઓ
                 </Link>
               </div>
@@ -239,19 +239,19 @@ export default function AdminPage() {
 
   // Authenticated Owner Dashboard
   return (
-    <div className="min-h-screen bg-slate-950 text-slate-100 flex flex-col">
+    <div className="min-h-screen bg-black text-white flex flex-col">
       {/* Admin Header */}
-      <header className="bg-black text-white border-b border-slate-800">
+      <header className="bg-black text-white border-b border-neutral-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <div className="w-8 h-8 rounded-lg bg-ocean-600 flex items-center justify-center font-bold text-sm">
+            <div className="w-8 h-8 rounded-lg bg-white text-black flex items-center justify-center font-bold text-sm">
               AS
             </div>
             <div>
               <h1 className="text-sm font-bold tracking-tight text-white">
                 Aqua Solutions — Admin Dashboard
               </h1>
-              <span className="text-[11px] text-slate-400 block -mt-0.5">
+              <span className="text-[11px] text-neutral-400 block -mt-0.5">
                 અમદાવાદ અને ગુજરાત લીડ મેનેજર
               </span>
             </div>
@@ -262,14 +262,14 @@ export default function AdminPage() {
             <Link
               href="/"
               target="_blank"
-              className="text-slate-300 hover:text-white flex items-center gap-1.5 transition-colors"
+              className="text-neutral-400 hover:text-white flex items-center gap-1.5 transition-colors"
             >
               <Home className="w-3.5 h-3.5" />
               <span className="hidden sm:inline">વેબસાઇટ જુઓ</span>
             </Link>
             <button
               onClick={handleLogout}
-              className="px-3 py-1.5 bg-slate-900 hover:bg-slate-800 text-slate-200 rounded-md flex items-center gap-1.5 transition-colors border border-slate-800"
+              className="px-3 py-1.5 bg-[#141414] hover:bg-[#202020] text-neutral-200 rounded-md flex items-center gap-1.5 transition-colors border border-neutral-800"
             >
               <LogOut className="w-3.5 h-3.5" />
               <span>લૉગ આઉટ</span>
@@ -283,49 +283,49 @@ export default function AdminPage() {
         
         {/* Metric Cards */}
         <div className="grid grid-cols-2 sm:grid-cols-5 gap-4">
-          <div className="bg-slate-900 border border-slate-800 rounded-xl p-4 shadow-sm">
-            <span className="text-xs font-medium text-slate-400 block">કુલ ઇન્ક્વાયરીઝ</span>
+          <div className="bg-[#0a0a0a] border border-neutral-800 rounded-xl p-4 shadow-sm">
+            <span className="text-xs font-medium text-neutral-400 block">કુલ ઇન્ક્વાયરીઝ</span>
             <span className="text-2xl font-bold font-mono text-white tabular-nums">
               {totalCount}
             </span>
-            <span className="text-[10px] text-slate-500 block mt-1">All Recorded</span>
+            <span className="text-[10px] text-neutral-500 block mt-1">All Recorded</span>
           </div>
 
-          <div className="bg-slate-900 border border-amber-900/60 rounded-xl p-4 shadow-sm">
-            <span className="text-xs font-medium text-amber-400 block">નવી પેન્ડિંગ લીડ્સ</span>
-            <span className="text-2xl font-bold font-mono text-amber-400 tabular-nums">
+          <div className="bg-[#0a0a0a] border border-neutral-800 rounded-xl p-4 shadow-sm">
+            <span className="text-xs font-medium text-neutral-300 block">નવી પેન્ડિંગ લીડ્સ</span>
+            <span className="text-2xl font-bold font-mono text-white tabular-nums">
               {pendingCount}
             </span>
-            <span className="text-[10px] text-amber-300/80 block mt-1">Requires Attention</span>
+            <span className="text-[10px] text-neutral-400 block mt-1">Requires Attention</span>
           </div>
 
-          <div className="bg-slate-900 border border-ocean-900/60 rounded-xl p-4 shadow-sm">
-            <span className="text-xs font-medium text-ocean-400 block">સંપર્ક / એસાઈન્ડ</span>
-            <span className="text-2xl font-bold font-mono text-ocean-400 tabular-nums">
+          <div className="bg-[#0a0a0a] border border-neutral-800 rounded-xl p-4 shadow-sm">
+            <span className="text-xs font-medium text-neutral-300 block">સંપર્ક / એસાઈન્ડ</span>
+            <span className="text-2xl font-bold font-mono text-white tabular-nums">
               {contactedCount}
             </span>
-            <span className="text-[10px] text-ocean-300/80 block mt-1">In Progress</span>
+            <span className="text-[10px] text-neutral-400 block mt-1">In Progress</span>
           </div>
 
-          <div className="bg-slate-900 border border-emerald-900/60 rounded-xl p-4 shadow-sm">
-            <span className="text-xs font-medium text-emerald-400 block">પૂર્ણ થયેલ સર્વિસ</span>
-            <span className="text-2xl font-bold font-mono text-emerald-400 tabular-nums">
+          <div className="bg-[#0a0a0a] border border-neutral-800 rounded-xl p-4 shadow-sm">
+            <span className="text-xs font-medium text-neutral-300 block">પૂર્ણ થયેલ સર્વિસ</span>
+            <span className="text-2xl font-bold font-mono text-white tabular-nums">
               {completedCount}
             </span>
-            <span className="text-[10px] text-emerald-300/80 block mt-1">Completed</span>
+            <span className="text-[10px] text-neutral-400 block mt-1">Completed</span>
           </div>
 
-          <div className="col-span-2 sm:col-span-1 bg-slate-900 border border-slate-800 rounded-xl p-4 shadow-sm">
-            <span className="text-xs font-medium text-slate-400 block">AMC વાર્ષિક પ્લાન્સ</span>
+          <div className="col-span-2 sm:col-span-1 bg-[#0a0a0a] border border-neutral-800 rounded-xl p-4 shadow-sm">
+            <span className="text-xs font-medium text-neutral-400 block">AMC વાર્ષિક પ્લાન્સ</span>
             <span className="text-2xl font-bold font-mono text-white tabular-nums">
               {amcCount}
             </span>
-            <span className="text-[10px] text-slate-500 block mt-1">AMC Contracts</span>
+            <span className="text-[10px] text-neutral-500 block mt-1">AMC Contracts</span>
           </div>
         </div>
 
         {/* Action Controls & Filters */}
-        <div className="bg-slate-900 border border-slate-800 rounded-xl p-4 flex flex-col md:flex-row md:items-center justify-between gap-4 shadow-sm">
+        <div className="bg-[#0a0a0a] border border-neutral-800 rounded-xl p-4 flex flex-col md:flex-row md:items-center justify-between gap-4 shadow-sm">
           {/* Status Tabs */}
           <div className="flex flex-wrap items-center gap-1.5 text-xs font-medium">
             {["ALL", "PENDING", "CONTACTED", "ASSIGNED", "COMPLETED", "CANCELLED"].map((status) => (
@@ -334,8 +334,8 @@ export default function AdminPage() {
                 onClick={() => setStatusFilter(status)}
                 className={`px-3 py-1.5 rounded-lg transition-colors ${
                   statusFilter === status
-                    ? "bg-ocean-600 text-white shadow-sm font-semibold"
-                    : "bg-slate-950 hover:bg-slate-800 text-slate-300 border border-slate-800"
+                    ? "bg-white text-black shadow-sm font-bold"
+                    : "bg-black hover:bg-[#141414] text-neutral-400 hover:text-white border border-neutral-800"
                 }`}
               >
                 {status === "ALL" && "બધા (All)"}
@@ -351,19 +351,19 @@ export default function AdminPage() {
           {/* Search Bar & Refresh */}
           <div className="flex items-center gap-3">
             <div className="relative flex-1 sm:w-64">
-              <Search className="w-3.5 h-3.5 absolute left-3 top-3 text-slate-500" />
+              <Search className="w-3.5 h-3.5 absolute left-3 top-3 text-neutral-500" />
               <input
                 type="text"
                 placeholder="નામ, ફોન કે વિસ્તાર શોધો..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-full h-9 pl-9 pr-3 rounded-lg border border-slate-700 text-xs focus:border-ocean-500 focus:ring-1 focus:ring-ocean-500 bg-slate-950 text-white placeholder-slate-500"
+                className="w-full h-9 pl-9 pr-3 rounded-lg border border-neutral-800 text-xs focus:border-white focus:ring-1 focus:ring-white bg-black text-white placeholder-neutral-500"
               />
             </div>
             <button
               onClick={fetchBookings}
               disabled={loadingBookings}
-              className="h-9 px-3 bg-slate-950 hover:bg-slate-800 text-slate-300 rounded-lg text-xs font-medium flex items-center gap-1.5 transition-colors border border-slate-800"
+              className="h-9 px-3 bg-[#141414] hover:bg-[#202020] text-neutral-200 rounded-lg text-xs font-medium flex items-center gap-1.5 transition-colors border border-neutral-800"
               title="રીફ્રેશ કરો"
             >
               <RefreshCw className={`w-3.5 h-3.5 ${loadingBookings ? "animate-spin" : ""}`} />
@@ -373,19 +373,19 @@ export default function AdminPage() {
         </div>
 
         {/* Leads Table / Card List */}
-        <div className="bg-slate-900 border border-slate-800 rounded-xl overflow-hidden shadow-sm">
+        <div className="bg-[#0a0a0a] border border-neutral-800 rounded-xl overflow-hidden shadow-sm">
           {loadingBookings ? (
-            <div className="p-12 text-center text-xs text-slate-400">
+            <div className="p-12 text-center text-xs text-neutral-400">
               સર્વિસ ડેટા લોડ થઈ રહ્યો છે...
             </div>
           ) : filteredBookings.length === 0 ? (
-            <div className="p-12 text-center text-xs text-slate-400">
+            <div className="p-12 text-center text-xs text-neutral-400">
               કોઈપણ સર્વિસ ટિકિટ મળી નથી. (No bookings found for selected filter).
             </div>
           ) : (
             <div className="overflow-x-auto">
               <table className="w-full text-left text-xs">
-                <thead className="bg-slate-950 border-b border-slate-800 text-slate-400 font-semibold uppercase tracking-wider text-[11px]">
+                <thead className="bg-black border-b border-neutral-800 text-neutral-400 font-semibold uppercase tracking-wider text-[11px]">
                   <tr>
                     <th className="py-3.5 px-4">ગ્રાહક અને ફોન</th>
                     <th className="py-3.5 px-4">સર્વિસ પ્રકાર</th>
@@ -395,18 +395,18 @@ export default function AdminPage() {
                     <th className="py-3.5 px-4">ટેકનિશિયન નોટ્સ</th>
                   </tr>
                 </thead>
-                <tbody className="divide-y divide-slate-800">
+                <tbody className="divide-y divide-neutral-800">
                   {filteredBookings.map((b) => (
-                    <tr key={b.id} className="hover:bg-slate-950/60 transition-colors">
+                    <tr key={b.id} className="hover:bg-black/60 transition-colors">
                       {/* Customer Name & Phone */}
                       <td className="py-3.5 px-4 align-top">
                         <div className="font-bold text-white text-sm">
                           {b.customerName}
                         </div>
-                        <div className="font-mono text-ocean-400 font-medium mt-0.5">
+                        <div className="font-mono text-neutral-300 font-medium mt-0.5">
                           +91 {b.phoneNumber}
                         </div>
-                        <div className="text-[10px] text-slate-500 mt-1">
+                        <div className="text-[10px] text-neutral-500 mt-1">
                           {new Date(b.createdAt).toLocaleDateString("en-IN", {
                             day: "numeric",
                             month: "short",
@@ -418,20 +418,20 @@ export default function AdminPage() {
 
                       {/* Service Category */}
                       <td className="py-3.5 px-4 align-top">
-                        <span className="font-semibold text-slate-200 block">
+                        <span className="font-semibold text-white block">
                           {b.serviceType}
                         </span>
-                        <span className="inline-block mt-1 text-[10px] font-mono px-1.5 py-0.5 rounded bg-slate-950 text-slate-400 border border-slate-800">
+                        <span className="inline-block mt-1 text-[10px] font-mono px-1.5 py-0.5 rounded bg-black text-neutral-400 border border-neutral-800">
                           {b.sourceForm}
                         </span>
                       </td>
 
                       {/* Time Slot & Address */}
                       <td className="py-3.5 px-4 align-top max-w-xs">
-                        <div className="text-slate-300 font-medium">
+                        <div className="text-neutral-200 font-medium">
                           {b.preferredTime || "સમય નોંધાયેલ નથી"}
                         </div>
-                        <div className="text-slate-400 text-[11px] mt-0.5 leading-snug">
+                        <div className="text-neutral-400 text-[11px] mt-0.5 leading-snug">
                           {b.address || "વિસ્તાર દર્શાવેલ નથી"}
                         </div>
                       </td>
@@ -443,14 +443,14 @@ export default function AdminPage() {
                           onChange={(e) => handleStatusChange(b.id, e.target.value)}
                           className={`text-xs font-semibold rounded-md px-2 py-1 border transition-colors ${
                             b.status === "PENDING"
-                              ? "bg-amber-950/50 text-amber-300 border-amber-800"
+                              ? "bg-black text-amber-300 border-amber-900"
                               : b.status === "CONTACTED"
-                              ? "bg-sky-950/50 text-sky-300 border-sky-800"
+                              ? "bg-black text-white border-neutral-600"
                               : b.status === "ASSIGNED"
-                              ? "bg-blue-950/50 text-blue-300 border-blue-800"
+                              ? "bg-black text-white border-neutral-500"
                               : b.status === "COMPLETED"
-                              ? "bg-emerald-950/50 text-emerald-300 border-emerald-800"
-                              : "bg-red-950/50 text-red-300 border-red-800"
+                              ? "bg-black text-emerald-400 border-emerald-900"
+                              : "bg-black text-red-400 border-red-900"
                           }`}
                         >
                           <option value="PENDING">PENDING</option>
@@ -466,7 +466,7 @@ export default function AdminPage() {
                         <div className="flex items-center gap-1.5">
                           <a
                             href={`tel:+91${b.phoneNumber}`}
-                            className="p-1.5 rounded-md bg-ocean-950 text-ocean-400 hover:bg-ocean-900 border border-ocean-800 transition-colors"
+                            className="p-1.5 rounded-md bg-[#141414] text-white hover:bg-[#222222] border border-neutral-700 transition-colors"
                             title="Call Customer"
                           >
                             <Phone className="w-3.5 h-3.5" />
@@ -478,7 +478,7 @@ export default function AdminPage() {
                             )}`}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="p-1.5 rounded-md bg-emerald-950 text-emerald-400 hover:bg-emerald-900 border border-emerald-800 transition-colors"
+                            className="p-1.5 rounded-md bg-[#141414] text-emerald-400 hover:bg-[#222222] border border-neutral-700 transition-colors"
                             title="WhatsApp Customer"
                           >
                             <MessageSquare className="w-3.5 h-3.5" />
@@ -494,20 +494,20 @@ export default function AdminPage() {
                               rows={2}
                               value={notesDraft}
                               onChange={(e) => setNotesDraft(e.target.value)}
-                              className="w-full p-1.5 border border-slate-700 rounded text-xs bg-slate-950 text-white"
+                              className="w-full p-1.5 border border-neutral-700 rounded text-xs bg-black text-white placeholder-neutral-600"
                               placeholder="Add technician or follow-up note..."
                             />
                             <div className="flex items-center gap-1">
                               <button
                                 onClick={() => handleSaveNotes(b.id)}
                                 disabled={savingNote}
-                                className="px-2 py-0.5 bg-ocean-600 text-white rounded text-[10px] font-medium"
+                                className="px-2 py-0.5 bg-white text-black font-semibold rounded text-[10px]"
                               >
                                 {savingNote ? "Saving..." : "Save"}
                               </button>
                               <button
                                 onClick={() => setEditingNotesId(null)}
-                                className="px-2 py-0.5 bg-slate-800 text-slate-300 rounded text-[10px]"
+                                className="px-2 py-0.5 bg-[#171717] text-neutral-300 rounded text-[10px]"
                               >
                                 Cancel
                               </button>
@@ -522,10 +522,10 @@ export default function AdminPage() {
                             className="cursor-pointer group"
                             title="Click to edit notes"
                           >
-                            <p className="text-slate-400 text-[11px] italic leading-tight">
+                            <p className="text-neutral-400 text-[11px] italic leading-tight">
                               {b.adminNotes || "નોંધ લખવા અહીં ક્લિક કરો..."}
                             </p>
-                            <span className="text-[10px] text-ocean-400 opacity-0 group-hover:opacity-100 transition-opacity">
+                            <span className="text-[10px] text-white opacity-0 group-hover:opacity-100 transition-opacity">
                               Edit Note
                             </span>
                           </div>

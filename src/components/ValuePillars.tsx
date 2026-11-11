@@ -51,18 +51,18 @@ const pillars: PillarItem[] = [
 
 export default function ValuePillars() {
   return (
-    <section id="pillars" className="py-16 bg-slate-900 border-b border-slate-800 text-slate-100 transition-colors">
+    <section id="pillars" className="py-16 bg-black border-b border-neutral-900 text-white transition-colors">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
         <div className="max-w-3xl mb-12">
-          <div className="inline-flex items-center gap-2 text-xs font-semibold text-ocean-400 tracking-wide uppercase mb-2">
+          <div className="inline-flex items-center gap-2 text-xs font-semibold text-neutral-400 tracking-wide uppercase mb-2">
             <span>અમારી મુખ્ય વિશેષતાઓ (Our Value Pillars)</span>
           </div>
           <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-white">
             અમદાવાદમાં Aqua Solutions શા માટે વિશ્વસનીય છે?
           </h2>
-          <p className="text-sm sm:text-base text-slate-400 mt-2">
+          <p className="text-sm sm:text-base text-neutral-400 mt-2">
             અમે માત્ર ફિલ્ટર બદલતા નથી, પરંતુ તમારા ઘર અને કંપનીમાં પીવાના પાણીની ૧૦૦% શુદ્ધતા સુનિશ્ચિત કરીએ છીએ.
           </p>
         </div>
@@ -74,27 +74,27 @@ export default function ValuePillars() {
             return (
               <div
                 key={index}
-                className="bg-slate-950 border border-slate-800 rounded-xl p-6 flex flex-col justify-between hover:border-slate-700 transition-colors shadow-sm"
+                className="bg-[#0a0a0a] border border-neutral-800 rounded-xl p-6 flex flex-col justify-between hover:border-neutral-700 transition-colors shadow-sm"
               >
                 <div>
-                  <div className="w-10 h-10 rounded-lg bg-slate-900 border border-slate-800 flex items-center justify-center text-ocean-400 mb-4 shadow-sm">
+                  <div className="w-10 h-10 rounded-lg bg-[#141414] border border-neutral-800 flex items-center justify-center text-white mb-4 shadow-sm">
                     <Icon className="w-5 h-5" strokeWidth={1.75} />
                   </div>
                   
                   <h3 className="text-base font-bold text-white">
                     {item.titleGu}
                   </h3>
-                  <span className="text-xs font-medium text-slate-400 block mb-2">
+                  <span className="text-xs font-medium text-neutral-400 block mb-2">
                     {item.titleEn}
                   </span>
 
-                  <p className="text-xs sm:text-sm text-slate-300 leading-relaxed mb-3">
+                  <p className="text-xs sm:text-sm text-neutral-300 leading-relaxed mb-3">
                     {item.descriptionGu}
                   </p>
                 </div>
 
-                <div className="pt-3 border-t border-slate-800">
-                  <span className="text-[11px] font-mono text-ocean-300 bg-ocean-950/60 border border-ocean-800/80 px-2 py-0.5 rounded font-medium inline-block">
+                <div className="pt-3 border-t border-neutral-800">
+                  <span className="text-[11px] font-mono text-neutral-300 bg-[#141414] border border-neutral-800 px-2 py-0.5 rounded font-medium inline-block">
                     {item.highlight}
                   </span>
                 </div>

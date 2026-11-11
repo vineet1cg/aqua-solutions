@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import { Phone, MessageSquare, CheckCircle2, ArrowRight, ShieldCheck, Clock, Activity, Send } from "lucide-react";
+import { Phone, MessageSquare, CheckCircle2, ShieldCheck, Clock, Activity } from "lucide-react";
 
 interface FormState {
   customerName: string;
@@ -47,7 +47,7 @@ export default function HeroBookingForm() {
 
     const addressText = formData.address.trim() ? formData.address.trim() : "અમદાવાદ (Ahmedabad)";
     
-    // Construct direct pre-written WhatsApp message as requested
+    // Direct pre-written WhatsApp message
     const prewrittenWhatsAppMessage = `Hi, I am ${formData.customerName}.
 
 I would like to book an RO water purifier service with Aqua Solutions:
@@ -60,14 +60,13 @@ I would like to book an RO water purifier service with Aqua Solutions:
     const businessPhone = "9662021602";
     const whatsappUrl = `https://wa.me/91${businessPhone}?text=${encodeURIComponent(prewrittenWhatsAppMessage)}`;
 
-    // Try to open WhatsApp directly
     try {
       window.open(whatsappUrl, "_blank");
     } catch (e) {
       console.log("Auto-open blocked, user can click button", e);
     }
 
-    // Save to database in background (skips blocking mailer)
+    // Save to database in background
     fetch("/api/bookings", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -90,7 +89,7 @@ I would like to book an RO water purifier service with Aqua Solutions:
   };
 
   return (
-    <section id="hero" className="relative bg-slate-950 text-slate-100 border-b border-slate-800/80 pt-10 pb-16 lg:pt-14 lg:pb-20 transition-colors">
+    <section id="hero" className="relative bg-black text-white border-b border-neutral-900 pt-10 pb-16 lg:pt-14 lg:pb-20 transition-colors">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-start">
           
@@ -98,21 +97,21 @@ I would like to book an RO water purifier service with Aqua Solutions:
           <div className="lg:col-span-7 space-y-6">
             
             {/* Direct Local Service Badge */}
-            <div className="inline-flex items-center gap-2 bg-slate-900 border border-slate-800 text-slate-300 text-xs px-3 py-1.5 rounded-md font-medium">
-              <span className="w-2 h-2 rounded-full bg-aqua-400"></span>
+            <div className="inline-flex items-center gap-2 bg-[#0d0d0d] border border-neutral-800 text-neutral-300 text-xs px-3 py-1.5 rounded-md font-medium">
+              <span className="w-2 h-2 rounded-full bg-white"></span>
               <span>અમદાવાદ અને ગાંધીનગરમાં આજની ડોરસ્ટેપ સર્વિસ ઉપલબ્ધ</span>
             </div>
 
             {/* Main Headline */}
             <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-white leading-[1.18]">
               તમારા પરિવાર અને બિઝનેસ માટે{" "}
-              <span className="text-ocean-400 underline decoration-ocean-500/50 decoration-2 underline-offset-4">
+              <span className="text-white underline decoration-neutral-600 decoration-2 underline-offset-4">
                 ૧૦૦% શુદ્ધ પીવાનું પાણી
               </span>
             </h1>
 
             {/* Sub-headline */}
-            <p className="text-base sm:text-lg text-slate-300 leading-relaxed max-w-2xl">
+            <p className="text-base sm:text-lg text-neutral-400 leading-relaxed max-w-2xl">
               Aqua Solutions — અમદાવાદમાં Kent, Aquaguard, Pureit સહિત તમામ ડોમેસ્ટિક RO પ્યુરિફાયર અને 50 LPH થી 2000+ LPH કોમર્શિયલ પ્લાન્ટ્સનું વેચાણ, ઓરિજિનલ સ્પેર પાર્ટ્સ સાથે રીપેરિંગ અને વિશ્વસનીય AMC વાર્ષિક કોન્ટ્રાક્ટ.
             </p>
 
@@ -120,7 +119,7 @@ I would like to book an RO water purifier service with Aqua Solutions:
             <div className="flex flex-wrap items-center gap-3 pt-2">
               <a
                 href="tel:+919662021602"
-                className="h-11 px-5 bg-ocean-600 hover:bg-ocean-700 text-white font-medium rounded-lg inline-flex items-center gap-2 transition-colors shadow-sm"
+                className="h-11 px-5 bg-white hover:bg-neutral-200 text-black font-semibold rounded-lg inline-flex items-center gap-2 transition-colors shadow-sm"
               >
                 <Phone className="w-4 h-4" />
                 <span>+91 96620 21602 પર કૉલ કરો</span>
@@ -129,84 +128,84 @@ I would like to book an RO water purifier service with Aqua Solutions:
                 href="https://wa.me/919662021602?text=Hi,%20I%20am%20interested%20in%20Aqua%20Solutions%20RO%20water%20purifier%20service."
                 target="_blank"
                 rel="noopener noreferrer"
-                className="h-11 px-5 bg-emerald-600 hover:bg-emerald-700 text-white font-medium rounded-lg inline-flex items-center gap-2 transition-colors shadow-sm"
+                className="h-11 px-5 bg-emerald-600 hover:bg-emerald-700 text-white font-semibold rounded-lg inline-flex items-center gap-2 transition-colors shadow-sm"
               >
                 <MessageSquare className="w-4 h-4" />
                 <span>WhatsApp પર મેસેજ કરો</span>
               </a>
             </div>
 
-            {/* Unslop Moment: Grounded Water Purity & Operational Status */}
-            <div className="bg-slate-900 border border-slate-800 rounded-xl p-4 sm:p-5 mt-6 shadow-sm">
-              <div className="flex items-center justify-between border-b border-slate-800 pb-3 mb-3">
+            {/* Grounded Water Purity & Operational Status */}
+            <div className="bg-[#0a0a0a] border border-neutral-800 rounded-xl p-4 sm:p-5 mt-6 shadow-sm">
+              <div className="flex items-center justify-between border-b border-neutral-800 pb-3 mb-3">
                 <div className="flex items-center gap-2">
-                  <Activity className="w-4 h-4 text-ocean-400" />
+                  <Activity className="w-4 h-4 text-white" />
                   <span className="text-xs font-semibold text-white tracking-wide">
                     પાણીની ગુણવત્તા માપદંડ (TDS Quality Standard)
                   </span>
                 </div>
-                <span className="text-[11px] font-mono bg-slate-800 text-slate-300 px-2 py-0.5 rounded border border-slate-700">
+                <span className="text-[11px] font-mono bg-black text-neutral-300 px-2 py-0.5 rounded border border-neutral-800">
                   IS 10500 Compliant
                 </span>
               </div>
 
               <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 text-xs">
-                <div className="bg-slate-950 border border-slate-800 rounded-lg p-2.5">
-                  <span className="text-slate-400 block text-[11px]">કાચું બોરવેલ પાણી (Raw Tap)</span>
-                  <span className="text-sm font-semibold text-amber-400 tabular-nums">
+                <div className="bg-black border border-neutral-800 rounded-lg p-2.5">
+                  <span className="text-neutral-400 block text-[11px]">કાચું બોરવેલ પાણી (Raw Tap)</span>
+                  <span className="text-sm font-semibold text-neutral-200 tabular-nums">
                     650 - 1200 TDS
                   </span>
-                  <span className="text-[10px] text-slate-500 block mt-0.5">હાનિકારક ક્ષારયુક્ત</span>
+                  <span className="text-[10px] text-neutral-500 block mt-0.5">હાનિકારક ક્ષારયુક્ત</span>
                 </div>
 
-                <div className="bg-emerald-950/30 border border-emerald-800/60 rounded-lg p-2.5">
-                  <span className="text-emerald-300 block text-[11px] font-medium">Aqua Solutions RO</span>
-                  <span className="text-sm font-semibold text-emerald-400 tabular-nums">
+                <div className="bg-[#141414] border border-neutral-700 rounded-lg p-2.5">
+                  <span className="text-white block text-[11px] font-medium">Aqua Solutions RO</span>
+                  <span className="text-sm font-semibold text-white tabular-nums">
                     40 - 70 TDS (શુદ્ધ)
                   </span>
-                  <span className="text-[10px] text-emerald-300/80 block mt-0.5">આદર્શ મિનરલ બેલેન્સ</span>
+                  <span className="text-[10px] text-neutral-400 block mt-0.5">આદર્શ મિનરલ બેલેન્સ</span>
                 </div>
 
-                <div className="col-span-2 sm:col-span-1 bg-slate-950 border border-slate-800 rounded-lg p-2.5">
-                  <span className="text-slate-400 block text-[11px]">ટેકનિશિયન રિસ્પોન્સ</span>
-                  <span className="text-sm font-semibold text-slate-200 tabular-nums">
+                <div className="col-span-2 sm:col-span-1 bg-black border border-neutral-800 rounded-lg p-2.5">
+                  <span className="text-neutral-400 block text-[11px]">ટેકનિશિયન રિસ્પોન્સ</span>
+                  <span className="text-sm font-semibold text-white tabular-nums">
                     30 - 45 મિનિટ
                   </span>
-                  <span className="text-[10px] text-slate-500 block mt-0.5">અમદાવાદ એરિયા વાઇઝ</span>
+                  <span className="text-[10px] text-neutral-500 block mt-0.5">અમદાવાદ એરિયા વાઇઝ</span>
                 </div>
               </div>
             </div>
 
             {/* Verifiable 3 Figures (10+ Years, 5000+ Customers, 24/7 Support) */}
-            <div className="grid grid-cols-3 gap-4 pt-4 border-t border-slate-800">
+            <div className="grid grid-cols-3 gap-4 pt-4 border-t border-neutral-800">
               <div>
-                <div className="text-2xl sm:text-3xl font-bold font-mono text-ocean-400 tabular-nums">
+                <div className="text-2xl sm:text-3xl font-bold font-mono text-white tabular-nums">
                   10+
                 </div>
-                <div className="text-xs sm:text-sm font-medium text-slate-200 mt-0.5">
+                <div className="text-xs sm:text-sm font-medium text-neutral-300 mt-0.5">
                   વર્ષનો અનુભવ
                 </div>
-                <div className="text-[11px] text-slate-500">10+ Years in Ahmedabad</div>
+                <div className="text-[11px] text-neutral-500">10+ Years in Ahmedabad</div>
               </div>
 
               <div>
-                <div className="text-2xl sm:text-3xl font-bold font-mono text-ocean-400 tabular-nums">
+                <div className="text-2xl sm:text-3xl font-bold font-mono text-white tabular-nums">
                   5,000+
                 </div>
-                <div className="text-xs sm:text-sm font-medium text-slate-200 mt-0.5">
+                <div className="text-xs sm:text-sm font-medium text-neutral-300 mt-0.5">
                   સંતુષ્ટ ગ્રાહકો
                 </div>
-                <div className="text-[11px] text-slate-500">5,000+ Happy Customers</div>
+                <div className="text-[11px] text-neutral-500">5,000+ Happy Customers</div>
               </div>
 
               <div>
-                <div className="text-2xl sm:text-3xl font-bold font-mono text-ocean-400 tabular-nums">
+                <div className="text-2xl sm:text-3xl font-bold font-mono text-white tabular-nums">
                   24/7
                 </div>
-                <div className="text-xs sm:text-sm font-medium text-slate-200 mt-0.5">
+                <div className="text-xs sm:text-sm font-medium text-neutral-300 mt-0.5">
                   સર્વિસ સપોર્ટ
                 </div>
-                <div className="text-[11px] text-slate-500">Emergency Support</div>
+                <div className="text-[11px] text-neutral-500">Emergency Support</div>
               </div>
             </div>
 
@@ -214,39 +213,39 @@ I would like to book an RO water purifier service with Aqua Solutions:
 
           {/* Right Column: Embedded Quick Booking Card (5 cols) */}
           <div id="quick-booking" className="lg:col-span-5">
-            <div className="bg-slate-900 border border-slate-800 rounded-2xl p-6 sm:p-7 shadow-lg">
-              <div className="border-b border-slate-800 pb-4 mb-5">
-                <span className="text-xs font-semibold text-ocean-400 uppercase tracking-wide block">
+            <div className="bg-[#0a0a0a] border border-neutral-800 rounded-2xl p-6 sm:p-7 shadow-2xl">
+              <div className="border-b border-neutral-800 pb-4 mb-5">
+                <span className="text-xs font-semibold text-neutral-400 uppercase tracking-wide block">
                   ત્વરિત ડોરસ્ટેપ સર્વિસ (Quick Service)
                 </span>
                 <h3 className="text-xl font-bold text-white mt-1">
                   ઝડપી સર્વિસ બુક કરો
                 </h3>
-                <p className="text-xs text-slate-400 mt-1">
+                <p className="text-xs text-neutral-400 mt-1">
                   ફોર્મ સબમિટ કરતાં જ વિગતો સીધી WhatsApp માં ખૂલશે — કોઈ ઇમેઇલની રાહ જોવી નહીં પડે.
                 </p>
               </div>
 
               {submittedData ? (
-                <div className="bg-slate-950 border border-emerald-800/80 rounded-xl p-5 space-y-4">
+                <div className="bg-black border border-neutral-700 rounded-xl p-5 space-y-4">
                   <div className="flex items-start gap-3">
-                    <CheckCircle2 className="w-5 h-5 text-emerald-400 mt-0.5 flex-shrink-0" />
+                    <CheckCircle2 className="w-5 h-5 text-white mt-0.5 flex-shrink-0" />
                     <div>
                       <h4 className="text-sm font-bold text-white">
                         નમસ્તે {submittedData.customerName}, તમારો WhatsApp મેસેજ તૈયાર છે!
                       </h4>
-                      <p className="text-xs text-slate-300 mt-1 leading-relaxed">
+                      <p className="text-xs text-neutral-300 mt-1 leading-relaxed">
                         નીચે આપેલા બટન પર ક્લિક કરીને સીધો WhatsApp મેસેજ મોકલો:
                       </p>
                     </div>
                   </div>
 
                   {/* Prewritten Message Preview Box */}
-                  <div className="bg-slate-900 border border-slate-800 rounded-lg p-3 text-[11px] font-mono text-slate-300 whitespace-pre-wrap leading-relaxed max-h-36 overflow-y-auto">
+                  <div className="bg-[#121212] border border-neutral-800 rounded-lg p-3 text-[11px] font-mono text-neutral-300 whitespace-pre-wrap leading-relaxed max-h-36 overflow-y-auto">
                     {submittedData.messageText}
                   </div>
 
-                  <div className="pt-2 border-t border-slate-800 flex flex-col gap-2">
+                  <div className="pt-2 border-t border-neutral-800 flex flex-col gap-2">
                     <a
                       href={submittedData.whatsappUrl}
                       target="_blank"
@@ -259,7 +258,7 @@ I would like to book an RO water purifier service with Aqua Solutions:
                     <button
                       type="button"
                       onClick={() => setSubmittedData(null)}
-                      className="text-xs text-slate-400 hover:text-white text-center py-1 transition-colors"
+                      className="text-xs text-neutral-400 hover:text-white text-center py-1 transition-colors"
                     >
                       બીજી નવી સર્વિસ બુક કરો
                     </button>
@@ -268,14 +267,14 @@ I would like to book an RO water purifier service with Aqua Solutions:
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-4">
                   {errorMsg && (
-                    <div className="p-3 bg-red-950/50 border border-red-800 rounded-lg text-xs text-red-300">
+                    <div className="p-3 bg-[#1a0505] border border-red-900 rounded-lg text-xs text-red-300">
                       {errorMsg}
                     </div>
                   )}
 
                   {/* Customer Name */}
                   <div>
-                    <label className="block text-xs font-medium text-slate-300 mb-1">
+                    <label className="block text-xs font-medium text-neutral-300 mb-1">
                       તમારું પૂરું નામ (Full Name) *
                     </label>
                     <input
@@ -284,17 +283,17 @@ I would like to book an RO water purifier service with Aqua Solutions:
                       placeholder="દા.ત. રમેશભાઈ પટેલ"
                       value={formData.customerName}
                       onChange={(e) => setFormData({ ...formData, customerName: e.target.value })}
-                      className="w-full h-10 px-3 rounded-lg border border-slate-700 text-sm focus:border-ocean-500 focus:ring-1 focus:ring-ocean-500 bg-slate-950 text-white placeholder-slate-500"
+                      className="w-full h-10 px-3 rounded-lg border border-neutral-800 text-sm focus:border-white focus:ring-1 focus:ring-white bg-black text-white placeholder-neutral-600"
                     />
                   </div>
 
                   {/* Mobile Number */}
                   <div>
-                    <label className="block text-xs font-medium text-slate-300 mb-1">
+                    <label className="block text-xs font-medium text-neutral-300 mb-1">
                       ૧૦-અંકનો મોબાઈલ નંબર (Mobile Number) *
                     </label>
                     <div className="relative">
-                      <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-xs font-mono text-slate-500">
+                      <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-xs font-mono text-neutral-500">
                         +91
                       </div>
                       <input
@@ -304,20 +303,20 @@ I would like to book an RO water purifier service with Aqua Solutions:
                         placeholder="98XXXXXXXX"
                         value={formData.phoneNumber}
                         onChange={(e) => setFormData({ ...formData, phoneNumber: e.target.value })}
-                        className="w-full h-10 pl-11 pr-3 rounded-lg border border-slate-700 text-sm font-mono focus:border-ocean-500 focus:ring-1 focus:ring-ocean-500 bg-slate-950 text-white placeholder-slate-500"
+                        className="w-full h-10 pl-11 pr-3 rounded-lg border border-neutral-800 text-sm font-mono focus:border-white focus:ring-1 focus:ring-white bg-black text-white placeholder-neutral-600"
                       />
                     </div>
                   </div>
 
                   {/* Service Type Dropdown */}
                   <div>
-                    <label className="block text-xs font-medium text-slate-300 mb-1">
+                    <label className="block text-xs font-medium text-neutral-300 mb-1">
                       સર્વિસનો પ્રકાર (Service Type) *
                     </label>
                     <select
                       value={formData.serviceType}
                       onChange={(e) => setFormData({ ...formData, serviceType: e.target.value })}
-                      className="w-full h-10 px-3 rounded-lg border border-slate-700 text-sm focus:border-ocean-500 focus:ring-1 focus:ring-ocean-500 bg-slate-950 text-white"
+                      className="w-full h-10 px-3 rounded-lg border border-neutral-800 text-sm focus:border-white focus:ring-1 focus:ring-white bg-black text-white"
                     >
                       <option value="RO સર્વિસ અને TDS ચેકઅપ (RO Servicing)">
                         RO સર્વિસ અને TDS ચેકઅપ (General Servicing)
@@ -342,7 +341,7 @@ I would like to book an RO water purifier service with Aqua Solutions:
 
                   {/* Area / Address */}
                   <div>
-                    <label className="block text-xs font-medium text-slate-300 mb-1">
+                    <label className="block text-xs font-medium text-neutral-300 mb-1">
                       વિસ્તાર / સરનામું (Area in Ahmedabad)
                     </label>
                     <input
@@ -350,7 +349,7 @@ I would like to book an RO water purifier service with Aqua Solutions:
                       placeholder="દા.ત. વસ્ત્રાપુર, બોડકદેવ, સેટેલાઇટ, બોપલ..."
                       value={formData.address}
                       onChange={(e) => setFormData({ ...formData, address: e.target.value })}
-                      className="w-full h-10 px-3 rounded-lg border border-slate-700 text-sm focus:border-ocean-500 focus:ring-1 focus:ring-ocean-500 bg-slate-950 text-white placeholder-slate-500"
+                      className="w-full h-10 px-3 rounded-lg border border-neutral-800 text-sm focus:border-white focus:ring-1 focus:ring-white bg-black text-white placeholder-neutral-600"
                     />
                   </div>
 
@@ -358,7 +357,7 @@ I would like to book an RO water purifier service with Aqua Solutions:
                   <button
                     type="submit"
                     disabled={loading}
-                    className="w-full h-11 bg-ocean-600 hover:bg-ocean-700 disabled:opacity-70 text-white font-medium text-sm rounded-lg flex items-center justify-center gap-2 transition-colors shadow-sm active:translate-y-0.5 mt-2"
+                    className="w-full h-11 bg-white hover:bg-neutral-200 disabled:opacity-70 text-black font-semibold text-sm rounded-lg flex items-center justify-center gap-2 transition-colors shadow-sm active:translate-y-0.5 mt-2"
                   >
                     {loading ? (
                       <span>મેસેજ તૈયાર થઈ રહ્યો છે...</span>
@@ -370,14 +369,14 @@ I would like to book an RO water purifier service with Aqua Solutions:
                     )}
                   </button>
 
-                  <div className="flex items-center justify-center gap-3 pt-2 text-[11px] text-slate-400">
+                  <div className="flex items-center justify-center gap-3 pt-2 text-[11px] text-neutral-400">
                     <span className="flex items-center gap-1">
-                      <ShieldCheck className="w-3.5 h-3.5 text-aqua-400" />
+                      <ShieldCheck className="w-3.5 h-3.5 text-white" />
                       ઓરિજિનલ સ્પેર પાર્ટ્સ
                     </span>
                     <span>•</span>
                     <span className="flex items-center gap-1">
-                      <Clock className="w-3.5 h-3.5 text-ocean-400" />
+                      <Clock className="w-3.5 h-3.5 text-white" />
                       તાત્કાલિક વોટ્સએપ કનેક્ટ
                     </span>
                   </div>
