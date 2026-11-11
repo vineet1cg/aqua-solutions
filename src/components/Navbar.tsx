@@ -11,12 +11,12 @@ export default function Navbar() {
   return (
     <>
       {/* 1. Top Announcement Bar */}
-      <div className="bg-black text-neutral-300 text-xs sm:text-sm py-2 px-4 sm:px-6 border-b border-neutral-900">
+      <div className="bg-neutral-900 text-neutral-200 dark:bg-black dark:text-neutral-300 text-xs sm:text-sm py-2 px-4 sm:px-6 border-b border-neutral-800 dark:border-neutral-900 transition-colors">
         <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-2">
           {/* Tagline */}
           <div className="flex items-center gap-2 text-center sm:text-left">
             <span className="inline-block w-2 h-2 rounded-full bg-neutral-400"></span>
-            <span className="font-medium tracking-tight text-neutral-300">
+            <span className="font-medium tracking-tight">
               સ્વચ્છ અને શુદ્ધ પાણી માટે આપનું વિશ્વસનીય નામ | Pure Water Solutions
             </span>
           </div>
@@ -30,7 +30,7 @@ export default function Navbar() {
               <Phone className="w-3.5 h-3.5 text-neutral-400" />
               <span>+91 96620 21602</span>
             </a>
-            <span className="text-neutral-700">|</span>
+            <span className="text-neutral-600 dark:text-neutral-700">|</span>
             <a
               href="https://wa.me/919662021602?text=Hi,%20I%20need%20RO%20water%20purifier%20service%20details%20from%20Aqua%20Solutions."
               target="_blank"
@@ -45,46 +45,46 @@ export default function Navbar() {
       </div>
 
       {/* 2. Sticky Main Header */}
-      <header className="sticky top-0 z-40 bg-black/95 backdrop-blur-md border-b border-neutral-900 shadow-sm transition-colors">
+      <header className="sticky top-0 z-40 bg-white/95 text-black border-b border-neutral-200 dark:bg-black/95 dark:text-white dark:border-neutral-900 backdrop-blur-md shadow-sm transition-colors">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
           {/* Brand Logo */}
           <Link href="/" className="flex items-center gap-2.5 group">
-            <div className="w-9 h-9 rounded-lg bg-white text-black flex items-center justify-center font-bold text-lg shadow-sm">
-              <Droplet className="w-5 h-5 fill-black text-black" />
+            <div className="w-9 h-9 rounded-lg bg-black text-white dark:bg-white dark:text-black flex items-center justify-center font-bold text-lg shadow-sm transition-colors">
+              <Droplet className="w-5 h-5 fill-current" />
             </div>
             <div>
-              <span className="text-lg font-bold tracking-tight text-white group-hover:text-neutral-300 transition-colors">
+              <span className="text-lg font-bold tracking-tight text-black dark:text-white group-hover:text-neutral-600 dark:group-hover:text-neutral-300 transition-colors">
                 Aqua Solutions
               </span>
-              <span className="hidden sm:block text-[11px] text-neutral-400 font-medium -mt-1">
+              <span className="hidden sm:block text-[11px] text-neutral-500 dark:text-neutral-400 font-medium -mt-1">
                 RO Sales, Service & AMC • Ahmedabad
               </span>
             </div>
           </Link>
 
           {/* Desktop Nav Links */}
-          <nav className="hidden md:flex items-center gap-5 lg:gap-6 text-sm font-medium text-neutral-300">
-            <a href="#hero" className="hover:text-white transition-colors">
+          <nav className="hidden md:flex items-center gap-5 lg:gap-6 text-sm font-medium text-neutral-700 dark:text-neutral-300">
+            <a href="#hero" className="hover:text-black dark:hover:text-white transition-colors">
               મુખ્ય પેજ (Home)
             </a>
-            <a href="#pillars" className="hover:text-white transition-colors">
+            <a href="#pillars" className="hover:text-black dark:hover:text-white transition-colors">
               વિશેષતાઓ (Pillars)
             </a>
-            <a href="#brands" className="hover:text-white transition-colors">
+            <a href="#brands" className="hover:text-black dark:hover:text-white transition-colors">
               બ્રાન્ડ્સ (Brands)
             </a>
-            <a href="#services" className="hover:text-white transition-colors">
+            <a href="#services" className="hover:text-black dark:hover:text-white transition-colors">
               સર્વિસીસ (Services)
             </a>
-            <a href="#amc-plans" className="hover:text-white transition-colors">
+            <a href="#amc-plans" className="hover:text-black dark:hover:text-white transition-colors">
               AMC પ્લાન્સ
             </a>
-            <a href="#contact" className="hover:text-white transition-colors">
+            <a href="#contact" className="hover:text-black dark:hover:text-white transition-colors">
               સંપર્ક (Contact)
             </a>
             <Link
               href="/admin"
-              className="text-xs text-neutral-400 hover:text-white transition-colors border border-neutral-800 rounded px-2 py-1 bg-neutral-950"
+              className="text-xs text-neutral-600 dark:text-neutral-400 hover:text-black dark:hover:text-white transition-colors border border-neutral-300 dark:border-neutral-800 rounded px-2 py-1 bg-neutral-100 dark:bg-neutral-950"
             >
               Admin
             </Link>
@@ -95,7 +95,7 @@ export default function Navbar() {
             <ThemeToggle />
             <a
               href="#quick-booking"
-              className="h-10 px-4 bg-white hover:bg-neutral-200 text-black text-sm font-semibold rounded-lg inline-flex items-center gap-2 transition-colors shadow-sm active:translate-y-0.5"
+              className="h-10 px-4 bg-black hover:bg-neutral-800 text-white dark:bg-white dark:hover:bg-neutral-200 dark:text-black text-sm font-semibold rounded-lg inline-flex items-center gap-2 transition-colors shadow-sm active:translate-y-0.5"
             >
               <span>સર્વિસ બુક કરો</span>
             </a>
@@ -106,15 +106,15 @@ export default function Navbar() {
             <ThemeToggle />
             <a
               href="tel:+919662021602"
-              className="w-9 h-9 rounded-lg bg-neutral-900 border border-neutral-800 flex items-center justify-center text-neutral-300"
+              className="w-9 h-9 rounded-lg bg-neutral-100 border border-neutral-300 text-black dark:bg-neutral-900 dark:border-neutral-800 dark:text-neutral-300 flex items-center justify-center"
               aria-label="Call Now"
             >
-              <Phone className="w-4 h-4 text-white" />
+              <Phone className="w-4 h-4" />
             </a>
             <button
               type="button"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="w-9 h-9 rounded-lg bg-neutral-900 border border-neutral-800 flex items-center justify-center text-neutral-300 hover:text-white hover:bg-neutral-800 transition-colors"
+              className="w-9 h-9 rounded-lg bg-neutral-100 border border-neutral-300 text-black hover:bg-neutral-200 dark:bg-neutral-900 dark:border-neutral-800 dark:text-neutral-300 dark:hover:text-white dark:hover:bg-neutral-800 flex items-center justify-center transition-colors"
               aria-label="Toggle navigation menu"
             >
               {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
@@ -124,63 +124,63 @@ export default function Navbar() {
 
         {/* Mobile Dropdown Menu */}
         {mobileMenuOpen && (
-          <div className="md:hidden bg-black border-b border-neutral-900 px-4 pt-3 pb-5 space-y-3">
-            <nav className="flex flex-col space-y-2 text-sm font-medium text-neutral-300">
+          <div className="md:hidden bg-white border-b border-neutral-200 text-black dark:bg-black dark:border-neutral-900 dark:text-neutral-300 px-4 pt-3 pb-5 space-y-3">
+            <nav className="flex flex-col space-y-2 text-sm font-medium">
               <a
                 href="#hero"
                 onClick={() => setMobileMenuOpen(false)}
-                className="py-2 px-3 rounded-md hover:bg-neutral-900 hover:text-white transition-colors"
+                className="py-2 px-3 rounded-md hover:bg-neutral-100 dark:hover:bg-neutral-900 transition-colors"
               >
                 મુખ્ય પેજ (Home)
               </a>
               <a
                 href="#pillars"
                 onClick={() => setMobileMenuOpen(false)}
-                className="py-2 px-3 rounded-md hover:bg-neutral-900 hover:text-white transition-colors"
+                className="py-2 px-3 rounded-md hover:bg-neutral-100 dark:hover:bg-neutral-900 transition-colors"
               >
                 વિશેષતાઓ (Pillars)
               </a>
               <a
                 href="#brands"
                 onClick={() => setMobileMenuOpen(false)}
-                className="py-2 px-3 rounded-md hover:bg-neutral-900 hover:text-white transition-colors"
+                className="py-2 px-3 rounded-md hover:bg-neutral-100 dark:hover:bg-neutral-900 transition-colors"
               >
                 બ્રાન્ડ્સ (Brands)
               </a>
               <a
                 href="#services"
                 onClick={() => setMobileMenuOpen(false)}
-                className="py-2 px-3 rounded-md hover:bg-neutral-900 hover:text-white transition-colors"
+                className="py-2 px-3 rounded-md hover:bg-neutral-100 dark:hover:bg-neutral-900 transition-colors"
               >
                 સર્વિસીસ (Services)
               </a>
               <a
                 href="#amc-plans"
                 onClick={() => setMobileMenuOpen(false)}
-                className="py-2 px-3 rounded-md hover:bg-neutral-900 hover:text-white transition-colors"
+                className="py-2 px-3 rounded-md hover:bg-neutral-100 dark:hover:bg-neutral-900 transition-colors"
               >
                 AMC પ્લાન્સ (AMC Plans)
               </a>
               <a
                 href="#contact"
                 onClick={() => setMobileMenuOpen(false)}
-                className="py-2 px-3 rounded-md hover:bg-neutral-900 hover:text-white transition-colors"
+                className="py-2 px-3 rounded-md hover:bg-neutral-100 dark:hover:bg-neutral-900 transition-colors"
               >
                 સંપર્ક અને બુકિંગ (Contact)
               </a>
               <Link
                 href="/admin"
                 onClick={() => setMobileMenuOpen(false)}
-                className="py-2 px-3 rounded-md text-neutral-400 hover:bg-neutral-900 hover:text-white transition-colors"
+                className="py-2 px-3 rounded-md text-neutral-600 dark:text-neutral-400 hover:bg-neutral-100 dark:hover:bg-neutral-900 transition-colors"
               >
                 Admin Dashboard
               </Link>
             </nav>
-            <div className="pt-2 border-t border-neutral-900 flex flex-col gap-2">
+            <div className="pt-2 border-t border-neutral-200 dark:border-neutral-900 flex flex-col gap-2">
               <a
                 href="#quick-booking"
                 onClick={() => setMobileMenuOpen(false)}
-                className="w-full h-10 bg-white hover:bg-neutral-200 text-black text-sm font-semibold rounded-lg flex items-center justify-center transition-colors"
+                className="w-full h-10 bg-black hover:bg-neutral-800 text-white dark:bg-white dark:hover:bg-neutral-200 dark:text-black text-sm font-semibold rounded-lg flex items-center justify-center transition-colors"
               >
                 સર્વિસ બુક કરો (Book Service)
               </a>

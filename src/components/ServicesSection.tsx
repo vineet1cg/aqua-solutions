@@ -76,18 +76,18 @@ const serviceCatalog: ServiceCard[] = [
 
 export default function ServicesSection() {
   return (
-    <section id="services" className="py-16 sm:py-20 bg-black border-b border-neutral-900 text-white transition-colors">
+    <section id="services" className="py-16 sm:py-20 bg-neutral-50 dark:bg-black border-b border-neutral-200 dark:border-neutral-900 text-black dark:text-white transition-colors">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Heading */}
         <div className="max-w-3xl mb-12">
-          <div className="inline-flex items-center gap-2 text-xs font-semibold text-neutral-400 tracking-wide uppercase mb-2">
+          <div className="inline-flex items-center gap-2 text-xs font-semibold text-neutral-600 dark:text-neutral-400 tracking-wide uppercase mb-2">
             <span>સર્વિસ કેટાલોગ (Service Catalog)</span>
           </div>
-          <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-white">
+          <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-black dark:text-white">
             અમારી ૪ મુખ્ય સર્વિસ કેટેગરીઝ
           </h2>
-          <p className="text-sm sm:text-base text-neutral-400 mt-2">
+          <p className="text-sm sm:text-base text-neutral-600 dark:text-neutral-400 mt-2">
             Aqua Solutions ઘરેલું અને ઔદ્યોગિક બંને ક્ષેત્રો માટે સંપૂર્ણ વોટર પ્યુરિફિકેશન સોલ્યુશન્સ પ્રદાન કરે છે.
           </p>
         </div>
@@ -99,48 +99,48 @@ export default function ServicesSection() {
             return (
               <div
                 key={idx}
-                className="bg-[#0a0a0a] border border-neutral-800 rounded-xl p-6 sm:p-7 flex flex-col justify-between shadow-sm hover:border-neutral-700 transition-colors"
+                className="bg-white dark:bg-[#0a0a0a] border border-neutral-200 dark:border-neutral-800 rounded-xl p-6 sm:p-7 flex flex-col justify-between shadow-sm hover:border-neutral-400 dark:hover:border-neutral-700 transition-colors"
               >
                 <div>
                   <div className="flex items-center justify-between mb-4">
-                    <div className="w-11 h-11 rounded-lg bg-[#141414] border border-neutral-800 flex items-center justify-center text-white">
+                    <div className="w-11 h-11 rounded-lg bg-neutral-100 dark:bg-[#141414] border border-neutral-200 dark:border-neutral-800 flex items-center justify-center text-black dark:text-white">
                       <Icon className="w-5 h-5" strokeWidth={1.75} />
                     </div>
-                    <span className="text-xs font-mono font-medium text-neutral-400 bg-black border border-neutral-800 px-2.5 py-1 rounded">
+                    <span className="text-xs font-mono font-medium text-neutral-600 dark:text-neutral-400 bg-neutral-100 dark:bg-black border border-neutral-200 dark:border-neutral-800 px-2.5 py-1 rounded">
                       Category 0{idx + 1}
                     </span>
                   </div>
 
-                  <h3 className="text-lg sm:text-xl font-bold text-white">
+                  <h3 className="text-lg sm:text-xl font-bold text-black dark:text-white">
                     {service.titleGu}
                   </h3>
-                  <span className="text-xs font-medium text-neutral-400 block mb-3">
+                  <span className="text-xs font-medium text-neutral-500 dark:text-neutral-400 block mb-3">
                     {service.titleEn}
                   </span>
 
-                  <p className="text-xs sm:text-sm text-neutral-300 leading-relaxed mb-5">
+                  <p className="text-xs sm:text-sm text-neutral-700 dark:text-neutral-300 leading-relaxed mb-5">
                     {service.summaryGu}
                   </p>
 
                   {/* Feature Checklist */}
                   <div className="space-y-2 mb-6">
                     {service.features.map((feat, fIdx) => (
-                      <div key={fIdx} className="flex items-start gap-2 text-xs text-neutral-300">
-                        <CheckCircle className="w-3.5 h-3.5 text-white mt-0.5 flex-shrink-0" />
+                      <div key={fIdx} className="flex items-start gap-2 text-xs text-neutral-700 dark:text-neutral-300">
+                        <CheckCircle className="w-3.5 h-3.5 text-black dark:text-white mt-0.5 flex-shrink-0" />
                         <span>{feat}</span>
                       </div>
                     ))}
                   </div>
                 </div>
 
-                <div className="pt-4 border-t border-neutral-800 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
-                  <span className="text-[11px] font-mono text-neutral-400 block">
+                <div className="pt-4 border-t border-neutral-200 dark:border-neutral-800 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+                  <span className="text-[11px] font-mono text-neutral-600 dark:text-neutral-400 block">
                     {service.specs}
                   </span>
 
                   <a
                     href="#contact"
-                    className="inline-flex items-center justify-center gap-1.5 text-xs font-semibold text-black bg-white hover:bg-neutral-200 px-3.5 py-2 rounded-lg transition-colors shadow-sm"
+                    className="inline-flex items-center justify-center gap-1.5 text-xs font-semibold text-white bg-black hover:bg-neutral-800 dark:text-black dark:bg-white dark:hover:bg-neutral-200 px-3.5 py-2 rounded-lg transition-colors shadow-sm"
                   >
                     <span>આ સર્વિસ બુક કરો</span>
                     <ArrowRight className="w-3.5 h-3.5" />

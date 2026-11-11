@@ -30,7 +30,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="gu" className="dark" suppressHydrationWarning>
+    <html lang="gu" suppressHydrationWarning>
       <head>
         <script
           dangerouslySetInnerHTML={{
@@ -38,10 +38,10 @@ export default function RootLayout({
               (function() {
                 try {
                   var theme = localStorage.getItem('theme');
-                  if (theme === 'light') {
-                    document.documentElement.classList.remove('dark');
-                  } else {
+                  if (theme === 'dark') {
                     document.documentElement.classList.add('dark');
+                  } else {
+                    document.documentElement.classList.remove('dark');
                   }
                 } catch(e) {}
               })();
@@ -49,7 +49,7 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className="min-h-screen bg-black text-white antialiased selection:bg-neutral-800 selection:text-white transition-colors duration-150">
+      <body className="min-h-screen bg-white text-black dark:bg-black dark:text-white antialiased selection:bg-neutral-800 selection:text-white transition-colors duration-150">
         {children}
       </body>
     </html>

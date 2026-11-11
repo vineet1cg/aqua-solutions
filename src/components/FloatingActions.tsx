@@ -24,12 +24,12 @@ export default function FloatingActions() {
       <a
         href="tel:+919662021602"
         aria-label="Call +91 96620 21602"
-        className="group flex items-center gap-2 bg-white hover:bg-neutral-200 text-black p-3 rounded-full shadow-lg transition-colors border border-neutral-300"
+        className="group flex items-center gap-2 bg-black hover:bg-neutral-800 text-white dark:bg-white dark:hover:bg-neutral-200 dark:text-black p-3 rounded-full shadow-lg transition-colors border border-neutral-800 dark:border-neutral-300"
       >
         <span className="max-w-0 overflow-hidden whitespace-nowrap text-xs font-bold group-hover:max-w-xs transition-all duration-200 ease-out pl-0 group-hover:pl-1 font-mono">
           96620 21602 કૉલ
         </span>
-        <Phone className="w-5 h-5 text-black" />
+        <Phone className="w-5 h-5 text-white dark:text-black" />
       </a>
     </div>
   );

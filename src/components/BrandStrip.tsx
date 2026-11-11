@@ -49,20 +49,20 @@ const brands: BrandItem[] = [
 
 export default function BrandStrip() {
   return (
-    <section id="brands" className="py-14 bg-black border-b border-neutral-900 text-white transition-colors">
+    <section id="brands" className="py-14 bg-white text-black border-b border-neutral-200 dark:bg-black dark:text-white dark:border-neutral-900 transition-colors">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Strip Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-8">
           <div>
-            <span className="text-xs font-semibold text-neutral-400 uppercase tracking-wider block">
+            <span className="text-xs font-semibold text-neutral-500 dark:text-neutral-400 uppercase tracking-wider block">
               મલ્ટી-બ્રાન્ડ સપોર્ટ (Multi-Brand Support)
             </span>
-            <h2 className="text-xl sm:text-2xl font-bold text-white mt-1">
+            <h2 className="text-xl sm:text-2xl font-bold text-black dark:text-white mt-1">
               તમામ અગ્રણી વોટર પ્યુરિફાયર બ્રાન્ડ્સમાં ઓરિજિનલ સર્વિસ
             </h2>
           </div>
-          <p className="text-xs sm:text-sm text-neutral-400 max-w-md">
+          <p className="text-xs sm:text-sm text-neutral-600 dark:text-neutral-400 max-w-md">
             તમારું RO કોઈપણ કંપનીનું હોય, અમારી પાસે તેના ઓરિજિનલ સ્પેર પાર્ટ્સ અને પ્રમાણિત ફિલ્ટર કીટ તાત્કાલિક ઉપલબ્ધ છે.
           </p>
         </div>
@@ -74,31 +74,31 @@ export default function BrandStrip() {
               key={i}
               className={`border rounded-xl p-4 flex flex-col justify-between transition-colors ${
                 b.category === "Commercial"
-                  ? "bg-[#141414] border-neutral-700"
-                  : "bg-[#0a0a0a] border-neutral-800 hover:border-neutral-700"
+                  ? "bg-neutral-100 border-neutral-300 dark:bg-[#141414] dark:border-neutral-700"
+                  : "bg-neutral-50 border-neutral-200 hover:border-neutral-300 dark:bg-[#0a0a0a] dark:border-neutral-800 dark:hover:border-neutral-700"
               }`}
             >
               <div>
                 <div className="flex items-center justify-between mb-2">
-                  <span className="text-[10px] font-mono text-neutral-400 uppercase tracking-wider">
+                  <span className="text-[10px] font-mono text-neutral-500 dark:text-neutral-400 uppercase tracking-wider">
                     {b.category}
                   </span>
                   {b.category === "Commercial" ? (
-                    <Factory className="w-3.5 h-3.5 text-white" />
+                    <Factory className="w-3.5 h-3.5 text-black dark:text-white" />
                   ) : (
-                    <Layers className="w-3.5 h-3.5 text-neutral-400" />
+                    <Layers className="w-3.5 h-3.5 text-neutral-400 dark:text-neutral-500" />
                   )}
                 </div>
-                <div className="text-sm sm:text-base font-bold text-white">
+                <div className="text-sm sm:text-base font-bold text-black dark:text-white">
                   {b.name}
                 </div>
-                <div className="text-[11px] text-neutral-300 font-medium mt-0.5">
+                <div className="text-[11px] text-neutral-600 dark:text-neutral-300 font-medium mt-0.5">
                   {b.subtext}
                 </div>
               </div>
 
-              <div className="mt-3 pt-2 border-t border-neutral-800">
-                <span className="text-[10px] text-neutral-400 font-mono block truncate">
+              <div className="mt-3 pt-2 border-t border-neutral-200 dark:border-neutral-800">
+                <span className="text-[10px] text-neutral-500 dark:text-neutral-400 font-mono block truncate">
                   {b.models}
                 </span>
               </div>

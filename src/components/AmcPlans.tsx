@@ -74,18 +74,18 @@ const amcTiers: AmcTier[] = [
 
 export default function AmcPlans() {
   return (
-    <section id="amc-plans" className="py-16 sm:py-20 bg-black border-b border-neutral-900 text-white transition-colors">
+    <section id="amc-plans" className="py-16 sm:py-20 bg-white dark:bg-black border-b border-neutral-200 dark:border-neutral-900 text-black dark:text-white transition-colors">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Heading */}
         <div className="max-w-3xl mb-12">
-          <div className="inline-flex items-center gap-2 text-xs font-semibold text-neutral-400 tracking-wide uppercase mb-2">
+          <div className="inline-flex items-center gap-2 text-xs font-semibold text-neutral-600 dark:text-neutral-400 tracking-wide uppercase mb-2">
             <span>વાર્ષિક મેન્ટેનન્સ કોન્ટ્રાક્ટ (AMC Comparison)</span>
           </div>
-          <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-white">
+          <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-black dark:text-white">
             તમારા બજેટ અને જરૂરિયાત મુજબ યોગ્ય AMC પ્લાન પસંદ કરો
           </h2>
-          <p className="text-sm sm:text-base text-neutral-400 mt-2">
+          <p className="text-sm sm:text-base text-neutral-600 dark:text-neutral-400 mt-2">
             કોઈ છુપી શરતો નહીં. અમે દરેક પ્લાનમાં શું મળશે અને શું બાકાત રહેશે તે અગાઉથી સ્પષ્ટ જણાવીએ છીએ.
           </p>
         </div>
@@ -97,8 +97,8 @@ export default function AmcPlans() {
               key={tier.id}
               className={`rounded-xl p-6 sm:p-7 flex flex-col justify-between transition-colors ${
                 tier.isPopular
-                  ? "bg-[#121212] border-2 border-white shadow-2xl relative"
-                  : "bg-[#0a0a0a] border border-neutral-800 shadow-sm"
+                  ? "bg-white border-2 border-black shadow-lg relative dark:bg-[#121212] dark:border-white dark:shadow-2xl"
+                  : "bg-neutral-50 border border-neutral-200 shadow-sm dark:bg-[#0a0a0a] dark:border-neutral-800"
               }`}
             >
               <div>
@@ -108,8 +108,8 @@ export default function AmcPlans() {
                     <span
                       className={`text-xs font-bold px-2.5 py-1 rounded inline-block ${
                         tier.isPopular
-                          ? "bg-white text-black"
-                          : "bg-[#171717] text-neutral-300 border border-neutral-700"
+                          ? "bg-black text-white dark:bg-white dark:text-black"
+                          : "bg-neutral-200 text-neutral-800 border border-neutral-300 dark:bg-[#171717] dark:text-neutral-300 dark:border-neutral-700"
                       }`}
                     >
                       {tier.badge}
@@ -118,36 +118,36 @@ export default function AmcPlans() {
                 )}
 
                 {/* Plan Title */}
-                <h3 className="text-xl font-bold text-white">
+                <h3 className="text-xl font-bold text-black dark:text-white">
                   {tier.nameGu}
                 </h3>
-                <span className="text-xs font-medium text-neutral-400 block mb-3">
+                <span className="text-xs font-medium text-neutral-500 dark:text-neutral-400 block mb-3">
                   {tier.nameEn}
                 </span>
 
-                <div className="py-3 border-y border-neutral-800 my-4">
-                  <div className="text-lg font-bold text-white">
+                <div className="py-3 border-y border-neutral-200 dark:border-neutral-800 my-4">
+                  <div className="text-lg font-bold text-black dark:text-white">
                     {tier.priceEstimate}
                   </div>
-                  <div className="text-xs text-neutral-400">
+                  <div className="text-xs text-neutral-500 dark:text-neutral-400">
                     {tier.priceNote}
                   </div>
                 </div>
 
-                <p className="text-xs text-neutral-300 mb-5">
-                  <strong className="text-white">લાયક:</strong> {tier.targetAudience}
+                <p className="text-xs text-neutral-700 dark:text-neutral-300 mb-5">
+                  <strong className="text-black dark:text-white">લાયક:</strong> {tier.targetAudience}
                 </p>
 
                 {/* Deliverables List */}
                 <div className="space-y-3 mb-6">
                   {tier.deliverables.map((item, dIdx) => (
-                    <div key={dIdx} className="flex items-start gap-2.5 text-xs text-neutral-200">
+                    <div key={dIdx} className="flex items-start gap-2.5 text-xs text-neutral-800 dark:text-neutral-200">
                       {item.included ? (
-                        <Check className="w-4 h-4 text-white mt-0.5 flex-shrink-0" />
+                        <Check className="w-4 h-4 text-black dark:text-white mt-0.5 flex-shrink-0" />
                       ) : (
-                        <X className="w-4 h-4 text-neutral-600 mt-0.5 flex-shrink-0" />
+                        <X className="w-4 h-4 text-neutral-400 dark:text-neutral-600 mt-0.5 flex-shrink-0" />
                       )}
-                      <span className={item.included ? "font-normal" : "text-neutral-500 line-through"}>
+                      <span className={item.included ? "font-normal" : "text-neutral-400 dark:text-neutral-500 line-through"}>
                         {item.text}
                       </span>
                     </div>
@@ -156,9 +156,9 @@ export default function AmcPlans() {
 
                 {/* Clear Exclusion Notice on Basic Tier */}
                 {tier.exclusionNote && (
-                  <div className="bg-[#141414] border border-neutral-700 rounded-lg p-3 text-[11px] text-neutral-300 leading-relaxed mb-6">
-                    <div className="flex items-start gap-1.5 font-semibold mb-0.5 text-white">
-                      <ShieldAlert className="w-3.5 h-3.5 text-white mt-0.5 flex-shrink-0" />
+                  <div className="bg-neutral-100 border border-neutral-300 dark:bg-[#141414] dark:border-neutral-700 rounded-lg p-3 text-[11px] text-neutral-700 dark:text-neutral-300 leading-relaxed mb-6">
+                    <div className="flex items-start gap-1.5 font-semibold mb-0.5 text-black dark:text-white">
+                      <ShieldAlert className="w-3.5 h-3.5 text-black dark:text-white mt-0.5 flex-shrink-0" />
                       <span>બાકાત સૂચના (Exclusion Notice)</span>
                     </div>
                     {tier.exclusionNote}
@@ -167,13 +167,13 @@ export default function AmcPlans() {
               </div>
 
               {/* Action Link to Booking Form */}
-              <div className="pt-4 border-t border-neutral-800">
+              <div className="pt-4 border-t border-neutral-200 dark:border-neutral-800">
                 <a
                   href="#contact"
                   className={`w-full h-10 rounded-lg text-xs font-semibold flex items-center justify-center gap-1.5 transition-colors ${
                     tier.isPopular
-                      ? "bg-white hover:bg-neutral-200 text-black shadow-sm"
-                      : "bg-[#141414] hover:bg-[#1f1f1f] text-white border border-neutral-700"
+                      ? "bg-black hover:bg-neutral-800 text-white dark:bg-white dark:hover:bg-neutral-200 dark:text-black shadow-sm"
+                      : "bg-white hover:bg-neutral-100 text-black border border-neutral-300 dark:bg-[#141414] dark:hover:bg-[#1f1f1f] dark:text-white dark:border-neutral-700"
                   }`}
                 >
                   <span>આ પ્લાન માટે પૂછપરછ કરો</span>

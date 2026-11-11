@@ -11,7 +11,7 @@ import FloatingActions from "@/components/FloatingActions";
 
 export default function HomePage() {
   return (
-    <main className="min-h-screen flex flex-col bg-black text-white transition-colors">
+    <main className="min-h-screen flex flex-col bg-white text-black dark:bg-black dark:text-white transition-colors">
       {/* 1. Header & Navigation with Theme Toggle */}
       <Navbar />
 
